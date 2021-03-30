@@ -23,13 +23,14 @@
         <activity android:name=".PostAdd.AddDetails" />
         <activity android:name=".SplashScreen.LandingPages" />
         <activity android:name=".Credentials.LoginActivity">
+        </activity>
+        <activity android:name=".Credentials.SignUpActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Credentials.SignUpActivity" />
     </application>
 
 </manifest>
