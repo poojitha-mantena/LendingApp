@@ -9,7 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.LendingApp">
-        <activity android:name=".ProductDetails.ProductDetailsPage"></activity>
+        <activity android:name=".SplashScreen.SplashPage">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ProductDetails.ProductDetailsPage" />
         <activity android:name=".Chat.ChatPage" />
         <activity android:name=".Categories.Laptops" />
         <activity android:name=".Categories.Mobiles" />
@@ -19,11 +26,6 @@
         <activity android:name=".Categories.Books" />
         <activity android:name=".Dashboard.SelectCategoryPage" />
         <activity android:name=".Navigation.NavigationBar" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".PostAdd.PostPhoto" />
         <activity android:name=".PostAdd.AddDetails" />
