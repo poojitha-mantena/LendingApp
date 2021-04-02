@@ -18,18 +18,20 @@
         <activity android:name=".Categories.Electronics" />
         <activity android:name=".Categories.Books" />
         <activity android:name=".Dashboard.SelectCategoryPage" />
-        <activity android:name=".Navigation.NavigationBar" />
+        <activity android:name=".Navigation.NavigationBar" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".PostAdd.PostPhoto" />
         <activity android:name=".PostAdd.AddDetails" />
         <activity android:name=".SplashScreen.LandingPages" />
         <activity android:name=".Credentials.LoginActivity">
         </activity>
         <activity android:name=".Credentials.SignUpActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
     </application>
 
