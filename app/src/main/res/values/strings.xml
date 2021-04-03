@@ -1,6 +1,8 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
+    xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">Lending App</string>
-  
+    <string name="open">Open</string>
+    <string name="close">Close</string>
     <string name="Welcome">WELCOME BACK</string>
     <string name="username">Username</string>
     <string name="password">Password</string>
@@ -10,7 +12,12 @@
     <string name="google">Login With Google+</string>
     <string name="account">Don\'t have an account yet?</string>
     <string name="register">Register Here</string>
-  
-    <string name="open">Open</string>
-    <string name="close">Close</string>
+    <string name="lets_get_started">Lets Get Started</string>
+    <string name="first_string_title">Lets Your Goods</string>
+    <string name="second_string_title">Exchange Goods</string>
+    <string name="third_string_title">Chat and Buy</string>
+    <string name="first_string_desc">Rent your goods or take rent of goods for a low reasonable price </string>
+    <string name="second_string_desc">Dont want to buy or rent? Well then, exchange it for one of your product</string>
+    <string name="third_string_desc">Loved a product? Well send a quick text to the owner and make a deal</string>
+
 </resources>
