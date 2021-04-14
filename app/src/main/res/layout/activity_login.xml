@@ -131,10 +131,10 @@
         app:layout_constraintTop_toBottomOf="@+id/button2" />
 
     <TextView
-        android:id="@+id/tvregisterhere"
+        android:id="@+id/textView8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="32dp"
         android:text="@string/register"
         android:textColor="#F31B0B"
         app:layout_constraintEnd_toEndOf="parent"
