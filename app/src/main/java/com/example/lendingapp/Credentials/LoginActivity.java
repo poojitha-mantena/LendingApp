@@ -27,6 +27,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             case R.id.tvregisterhere:
                 startActivity(new Intent(this,SignUpActivity.class));
                 break;
-        }
+                        }
     }
 }
