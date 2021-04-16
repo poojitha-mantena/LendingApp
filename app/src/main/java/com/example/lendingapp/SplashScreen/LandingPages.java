@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.lendingapp.Credentials.LoginActivity;
 import com.example.lendingapp.Credentials.SignUpActivity;
 import com.example.lendingapp.HelperClass.SliderAdapter;
 import com.example.lendingapp.R;
@@ -44,6 +45,16 @@ public class LandingPages extends AppCompatActivity {
         //Dots
         addDots(0);
         viewPager.addOnPageChangeListener(changeListener);
+
+        //lets get started button
+        letsGetStarted.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(LandingPages.this, LoginActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
     public void skip(View view) {
@@ -55,7 +66,7 @@ public class LandingPages extends AppCompatActivity {
         viewPager.setCurrentItem(currentPos + 1);
     }
 
-    private void addDots(int position) {
+    public void addDots(int position) {
 
         dots = new TextView[3];
         dotsLayout.removeAllViews();
@@ -92,6 +103,7 @@ public class LandingPages extends AppCompatActivity {
             } else {
                 letsGetStarted.setVisibility(View.VISIBLE);
             }
+
 
         }
 
