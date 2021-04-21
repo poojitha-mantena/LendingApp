@@ -19,5 +19,23 @@
     <string name="first_string_desc">Rent your goods or take rent of goods for a low reasonable price </string>
     <string name="second_string_desc">Dont want to buy or rent? Well then, exchange it for one of your product</string>
     <string name="third_string_desc">Loved a product? Well send a quick text to the owner and make a deal</string>
+    <string name="textview">Ad Details</string>
+    <string name="ad_title">Ad title</string>
+    <string name="Location">Location</string>
+    <string name="describe_your_product_here">describe your product here</string>
+    <string name="price">price</string>
+    <string name="button">Next</string>
+    <string name="name">Ad title</string>
+    <string name="name2">Product description</string>
+    <string name="name3">Price</string>
+    <string name="name4">Location</string>
+    <string name="enter_your_name">Enter Your Name</string>
+    <string name="enter_your_product_name">Enter Your Product Name</string>
+    <string name="browse_image">Browse Image</string>
+    <string name="post_add">Post Add</string>
+    <string name="todo">TODO</string>
+    <string name="tv3">Price</string>
+    <string name="tv1">Ad title</string>
+    <string name="tv4">Location</string>
 
 </resources>
