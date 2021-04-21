@@ -36,20 +36,21 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
+        getSupportActionBar().hide();
 
         mAuth = FirebaseAuth.getInstance();
 
 
-        loginhere = (TextView) findViewById(R.id.tvLogin);
+        loginhere = (TextView) findViewById(R.id.tvSignIn);
         loginhere.setOnClickListener(this);
 
-        registerUser = (Button) findViewById(R.id.button_register);
+        registerUser = (Button) findViewById(R.id.RegisterUser);
         registerUser.setOnClickListener(this);
 
-        editTextFullName = (EditText)findViewById(R.id.etfullname);
-        editTextEmail = (EditText)findViewById(R.id.etemailaddress);
+        editTextFullName = (EditText)findViewById(R.id.etFullname);
+        editTextEmail = (EditText)findViewById(R.id.etEmail);
         editTextPassword = (EditText)findViewById(R.id.etPassword);
-        editTextPhoneNumber = (EditText)findViewById(R.id.editTextPhone);
+        editTextPhoneNumber = (EditText)findViewById(R.id.etPhone);
 
 
         progressBar = (ProgressBar) findViewById(R.id.progressbar);
@@ -59,10 +60,10 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
     @Override
     public void onClick(View v){
         switch (v.getId()){
-            case R.id.tvLogin:
+            case R.id.tvSignIn:
                 startActivity(new Intent(this,LoginActivity.class));
                 break;
-            case R.id.button_register:
+            case R.id.RegisterUser:
                 registerUser();
                 break;
         }

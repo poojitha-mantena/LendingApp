@@ -34,6 +34,7 @@ public class LandingPages extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_landing_pages);
+        getSupportActionBar().hide();
 
         viewPager = findViewById(R.id.slider);
         dotsLayout = findViewById(R.id.dots);

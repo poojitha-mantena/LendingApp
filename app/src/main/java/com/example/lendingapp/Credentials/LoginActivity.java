@@ -33,28 +33,29 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        getSupportActionBar().hide();
 
-        register = (TextView) findViewById(R.id.tvregisterhere);
+        register = (TextView) findViewById(R.id.tvSignUp);
         register.setOnClickListener(this);
 
-        login=(Button)findViewById(R.id.loginbutton);
+        login=(Button)findViewById(R.id.LoginButton);
         login.setOnClickListener(this);
 
-        editTextEmail=(EditText)findViewById(R.id.etemail);
-        editTextPassword=(EditText)findViewById(R.id.etpassword);
+        editTextEmail=(EditText)findViewById(R.id.etEmail);
+        editTextPassword=(EditText)findViewById(R.id.etPassword);
 
-        progressBar=(ProgressBar)findViewById(R.id.progressBar);
+        progressBar=(ProgressBar)findViewById(R.id.progressbar);
         mAuth=FirebaseAuth.getInstance();
 
     }
     @Override
     public void onClick(View v){
         switch (v.getId()){
-            case R.id.tvregisterhere:
+            case R.id.tvSignUp:
                 startActivity(new Intent(this,SignUpActivity.class));
                 break;
 
-            case R.id.loginbutton:
+            case R.id.LoginButton:
                       userLogin();
                       break;
         }

@@ -18,6 +18,7 @@ public class SelectCategoryPage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_select_category_page);
+        getSupportActionBar().hide();
 
         card1 = (CardView) findViewById(R.id.vechileCard);
 
