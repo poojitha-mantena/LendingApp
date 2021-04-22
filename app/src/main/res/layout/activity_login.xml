@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".loginpage"
+    tools:context=".Credentials.LoginActivity"
     android:layout_gravity="center"
     android:gravity="center"
     android:orientation="vertical"
@@ -21,18 +21,18 @@
             android:id="@+id/tvhello"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Welcome Back,"
+            android:text="@string/Welcome"
             android:textSize="30sp"
             android:textColor="#6ad3d6"
-            android:fontFamily="sans-serif-condensed-medium"></TextView>
+            android:fontFamily="sans-serif-condensed-medium"/>
         <TextView
             android:id="@+id/login"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Login to continue."
+            android:text="@string/lgncnt"
             android:textSize="30sp"
             android:textColor="#6ad3d6"
-            android:fontFamily="sans-serif-condensed-medium"></TextView>
+            android:fontFamily="sans-serif-condensed-medium"/>
 
     </LinearLayout>
 
@@ -54,7 +54,7 @@
                 android:id="@+id/etEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Email" />
+                android:hint="@string/email" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -70,7 +70,7 @@
                 android:id="@+id/etPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Password"
+                android:hint="@string/password"
                 />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -80,21 +80,21 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="#00000000"
-            android:text="Forgot Password?"
-            android:layout_gravity="right"
+            android:text="@string/forgotpass"
+            android:layout_gravity="end"
             android:textColor="#c0c0c0"
             android:layout_marginBottom="20dp"
-            ></TextView>
+            />
 
         <Button
             android:id="@+id/LoginButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="#6ad3d6"
-            android:text="Login"
+            android:text="@string/login"
             android:textSize="18sp"
             android:layout_gravity="center"
-            android:elevation="0dp"></Button>
+            android:elevation="0dp" />
 
         <LinearLayout
             android:layout_width="350dp"
@@ -108,17 +108,17 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Don't have an account?"
-                ></TextView>
+                android:text="@string/account"
+                />
 
             <TextView
                 android:id="@+id/tvSignUp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Sign Up"
+                android:text="@string/signup"
                 android:layout_marginLeft="15dp"
                 android:textColor="#6ad3d6"
-                ></TextView>
+                />
 
         </LinearLayout>
 
@@ -137,19 +137,19 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="#6ad3d6"
-            android:text="GOOGLE SIGN IN"
+            android:text="@string/google"
             android:textSize="18sp"
             android:layout_gravity="center"
-            android:elevation="0dp"></Button>
+            android:elevation="0dp"/>
         <Button
             android:id="@+id/FacebookButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="#6ad3d6"
-            android:text="Facebook SIGN IN"
+            android:text="@string/facebook"
             android:textSize="18sp"
             android:layout_gravity="center"
-            android:elevation="0dp"></Button>
+            android:elevation="0dp"/>
 
         <ProgressBar
             android:id="@+id/progressbar"

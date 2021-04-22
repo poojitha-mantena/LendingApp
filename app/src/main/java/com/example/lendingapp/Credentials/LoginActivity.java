@@ -14,15 +14,17 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.lendingapp.Dashboard.SelectCategoryPage;
+import com.example.lendingapp.ForgotPassword;
 import com.example.lendingapp.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener{
 
-    private TextView register;
+    private TextView register,forgotPassword;
     private EditText editTextEmail,editTextPassword;
     private Button login;
 
@@ -47,6 +49,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         progressBar=(ProgressBar)findViewById(R.id.progressbar);
         mAuth=FirebaseAuth.getInstance();
 
+        forgotPassword=(TextView)findViewById(R.id.tvForgotPassword);
+        forgotPassword.setOnClickListener(this);
+
     }
     @Override
     public void onClick(View v){
@@ -56,8 +61,12 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 break;
 
             case R.id.LoginButton:
-                      userLogin();
-                      break;
+                userLogin();
+                break;
+
+            case R.id.tvForgotPassword:
+                    startActivity(new Intent(this, ForgotPassword.class));
+                    break;
         }
     }
     private void userLogin() {
@@ -90,7 +99,14 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
-                    startActivity(new Intent(LoginActivity.this, SelectCategoryPage.class));
+                    FirebaseUser user= FirebaseAuth.getInstance().getCurrentUser();
+
+                    if(user.isEmailVerified()) {
+                        startActivity(new Intent(LoginActivity.this, SelectCategoryPage.class));
+                    }  else {
+                            user.sendEmailVerification();
+                            Toast.makeText(LoginActivity.this,"Check Your Email To Verify Your Account",Toast.LENGTH_LONG).show();
+                        }
                 }else{
                     Toast.makeText(LoginActivity.this,"Failed to Login, Please try again!",Toast.LENGTH_LONG).show();
                 }
