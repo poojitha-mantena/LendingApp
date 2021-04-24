@@ -16,6 +16,13 @@
         android:textColor="#80151515"
         android:textSize="30sp"
         android:textStyle="bold" />
+    <Button
+        android:id="@+id/logout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="LOGOUT"
+        android:layout_marginStart="10sp"
+        android:layout_marginTop="9.5sp"/>
 
     <GridLayout
         android:layout_width="match_parent"
