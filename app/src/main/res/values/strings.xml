@@ -23,10 +23,6 @@
     <string name="second_string_desc">Dont want to buy or rent? Well then, exchange it for one of your product</string>
     <string name="third_string_desc">Loved a product? Well send a quick text to the owner and make a deal</string>
     <string name="textview">Ad Details</string>
-    <string name="ad_title">Ad title</string>
-    <string name="Location">Location</string>
-    <string name="describe_your_product_here">describe your product here</string>
-    <string name="price">price</string>
     <string name="button">Next</string>
     <string name="name">Ad title</string>
     <string name="name2">Product description</string>
@@ -40,5 +36,15 @@
     <string name="tv3">Price</string>
     <string name="tv1">Ad title</string>
     <string name="tv4">Location</string>
+    <string name="ad_details">Ad Details</string>
+    <string name="describe_your_product_here">describe your product here</string>
+    <string name="description">Description</string>
+    <string name="ad_title">Ad title</string>
+    <string name="price1">Price</string>
+    <string name="price">Price</string>
+    <string name="location">Location</string>
+    <string name="location2">Location</string>
+    <string name="next">Next</string>
+
 
 </resources>
