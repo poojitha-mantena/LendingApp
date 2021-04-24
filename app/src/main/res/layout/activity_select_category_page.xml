@@ -1,49 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/drawer"
     tools:context=".Dashboard.SelectCategoryPage">
+
+    <com.google.android.material.navigation.NavigationView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        app:itemTextColor="@color/black"
+        app:itemIconTint="#6ad3d6"
+        app:menu="@menu/drawermenu"
+        app:headerLayout="@layout/header"
+        android:layout_gravity = "start"
+        >
+
+    </com.google.android.material.navigation.NavigationView>
 
     <TextView
         android:id="@+id/title_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_margin="12dp"
+        android:layout_margin="8dp"
         android:text="CATEGORIES "
+        android:textAlignment="center"
         android:textColor="#80151515"
         android:textSize="30sp"
         android:textStyle="bold" />
-    <Button
-        android:id="@+id/logout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="LOGOUT"
-        android:layout_marginStart="10sp"
-        android:layout_marginTop="9.5sp"/>
 
     <GridLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/title_view"
-        android:layout_margin="20dp"
+        android:layout_margin="50dp"
         android:columnCount="2"
         android:rowCount="3">
 
 
         <androidx.cardview.widget.CardView
             android:id="@+id/vechileCard"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="80dp"
+            android:layout_height="40dp"
             android:layout_row="0"
             android:layout_rowWeight="1"
             android:layout_column="0"
             android:layout_columnWeight="1"
             android:layout_gravity="fill"
             app:cardCornerRadius="8dp"
-            app:cardElevation="8dp"
+            app:cardElevation="12dp"
             app:cardUseCompatPadding="true">
 
             <LinearLayout
@@ -76,7 +85,7 @@
             android:layout_columnWeight="1"
             android:layout_gravity="fill"
             app:cardCornerRadius="8dp"
-            app:cardElevation="8dp"
+            app:cardElevation="12dp"
             app:cardUseCompatPadding="true">
 
             <LinearLayout
@@ -109,7 +118,7 @@
             android:layout_columnWeight="1"
             android:layout_gravity="fill"
             app:cardCornerRadius="8dp"
-            app:cardElevation="8dp"
+            app:cardElevation="12dp"
             app:cardUseCompatPadding="true">
 
             <LinearLayout
@@ -142,7 +151,7 @@
             android:layout_columnWeight="1"
             android:layout_gravity="fill"
             app:cardCornerRadius="8dp"
-            app:cardElevation="8dp"
+            app:cardElevation="12dp"
             app:cardUseCompatPadding="true">
 
             <LinearLayout
@@ -176,7 +185,7 @@
             android:layout_columnWeight="1"
             android:layout_gravity="fill"
             app:cardCornerRadius="8dp"
-            app:cardElevation="8dp"
+            app:cardElevation="12dp"
             app:cardUseCompatPadding="true">
 
             <LinearLayout
@@ -209,7 +218,7 @@
             android:layout_columnWeight="1"
             android:layout_gravity="fill"
             app:cardCornerRadius="8dp"
-            app:cardElevation="8dp"
+            app:cardElevation="12dp"
             app:cardUseCompatPadding="true">
 
             <LinearLayout
@@ -237,5 +246,5 @@
     </GridLayout>
 
 
-</RelativeLayout>
+</androidx.drawerlayout.widget.DrawerLayout>
 

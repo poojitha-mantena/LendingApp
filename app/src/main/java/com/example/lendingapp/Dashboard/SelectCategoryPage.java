@@ -1,46 +1,36 @@
 package com.example.lendingapp.Dashboard;
 
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 
-import com.example.lendingapp.Credentials.LoginActivity;
 import com.example.lendingapp.Navigation.NavigationBar;
 import com.example.lendingapp.R;
-import com.google.android.gms.auth.api.signin.GoogleSignIn;
-import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 
 public class SelectCategoryPage extends AppCompatActivity {
 
+
     private CardView card1;
-     Button logoutButton;
+    private DrawerLayout mDrawerlayout;
+    private ActionBarDrawerToggle mToggle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_select_category_page);
+        //getSupportActionBar().hide();
 
-        logoutButton=findViewById(R.id.logout);
-
-
-        logoutButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                FirebaseAuth.getInstance().signOut();
-                Intent intent=new Intent(getApplicationContext(), LoginActivity.class);
-                startActivity(intent);
-            }
-        });
-
-
-
-        getSupportActionBar().hide();
+        mDrawerlayout = (DrawerLayout) findViewById(R.id.drawer);
+        mToggle = new ActionBarDrawerToggle(SelectCategoryPage.this,mDrawerlayout,R.string.open,R.string.close);
+        mDrawerlayout.addDrawerListener(mToggle);
+        mToggle.syncState();
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         card1 = (CardView) findViewById(R.id.vechileCard);
 
@@ -51,5 +41,15 @@ public class SelectCategoryPage extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
     }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        if (mToggle.onOptionsItemSelected(item)){
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
 }
