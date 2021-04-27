@@ -10,13 +10,16 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 
-import com.example.lendingapp.Navigation.NavigationBar;
+import com.example.lendingapp.Categories.Books;
+import com.example.lendingapp.Categories.Electronics;
+import com.example.lendingapp.Categories.Hardware;
+import com.example.lendingapp.Categories.Vechiles;
 import com.example.lendingapp.R;
 
 public class SelectCategoryPage extends AppCompatActivity {
 
 
-    private CardView card1;
+    private CardView VechilesCard,BooksCard,ElectronicsCard,HardwareCard;
     private DrawerLayout mDrawerlayout;
     private ActionBarDrawerToggle mToggle;
 
@@ -32,15 +35,44 @@ public class SelectCategoryPage extends AppCompatActivity {
         mToggle.syncState();
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        card1 = (CardView) findViewById(R.id.vechileCard);
+        VechilesCard = (CardView) findViewById(R.id.vechileCard);
+        BooksCard = (CardView) findViewById(R.id.booksCard);
+        ElectronicsCard = (CardView) findViewById(R.id.electronicsCard);
+        HardwareCard = (CardView) findViewById(R.id.hardwareCard);
 
-        card1.setOnClickListener(new View.OnClickListener() {
+        VechilesCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(SelectCategoryPage.this, NavigationBar.class);
+                Intent intent = new Intent(SelectCategoryPage.this, Vechiles.class);
                 startActivity(intent);
             }
         });
+
+        BooksCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(SelectCategoryPage.this, Books.class);
+                startActivity(intent);
+            }
+        });
+
+        ElectronicsCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(SelectCategoryPage.this, Electronics.class);
+                startActivity(intent);
+            }
+        });
+
+        HardwareCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(SelectCategoryPage.this, Hardware.class);
+                startActivity(intent);
+            }
+        });
+
+
 
     }
 
@@ -51,5 +83,4 @@ public class SelectCategoryPage extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
-
 }

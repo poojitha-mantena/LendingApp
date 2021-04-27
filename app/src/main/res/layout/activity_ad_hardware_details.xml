@@ -7,7 +7,7 @@
     android:layout_gravity="center"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context=".PostAdd.adHardwareDetails"
+    tools:context=".PostAdd.AdHardwareDetails"
     >
 
     <LinearLayout
