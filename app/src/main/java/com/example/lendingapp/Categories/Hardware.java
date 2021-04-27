@@ -12,5 +12,6 @@ public class Hardware extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hardware);
+        getSupportActionBar().setTitle("Hardware");
     }
 }

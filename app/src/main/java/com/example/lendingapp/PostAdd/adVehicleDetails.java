@@ -26,7 +26,7 @@ import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
-public class adVehicleDetails extends AppCompatActivity {
+public class AdVehicleDetails extends AppCompatActivity {
 
     private EditText adtitle;
     private EditText addescription;
@@ -100,7 +100,7 @@ public class adVehicleDetails extends AppCompatActivity {
             fileRef.putFile(imageUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                 @Override
                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                    Toast.makeText(adVehicleDetails.this, "Upload Successful", Toast.LENGTH_LONG).show();
+                    Toast.makeText(AdVehicleDetails.this, "Upload Successful", Toast.LENGTH_LONG).show();
                     Model upload = new Model(adtitle.getText().toString().trim(),addescription.getText().toString().trim(),
                             adprice.getText().toString().trim(),adlocation.getText().toString().trim(),taskSnapshot.getUploadSessionUri().toString());
                     String uploadId = mDatabaseRef.push().getKey();
@@ -109,7 +109,7 @@ public class adVehicleDetails extends AppCompatActivity {
             }).addOnFailureListener(new OnFailureListener() {
                 @Override
                 public void onFailure(@NonNull Exception e) {
-                    Toast.makeText(adVehicleDetails.this, e.getMessage(), Toast.LENGTH_LONG).show();
+                    Toast.makeText(AdVehicleDetails.this, e.getMessage(), Toast.LENGTH_LONG).show();
                 }
             }).addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
                 @Override
@@ -118,7 +118,7 @@ public class adVehicleDetails extends AppCompatActivity {
                 }
             });
         }else{
-            Toast.makeText(adVehicleDetails.this, "No file Selected", Toast.LENGTH_LONG).show();
+            Toast.makeText(AdVehicleDetails.this, "No file Selected", Toast.LENGTH_LONG).show();
         }
     }
 
