@@ -16,11 +16,9 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.lendingapp.Model.Model;
-import com.example.lendingapp.Navigation.NavigationBar;
 import com.example.lendingapp.R;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
@@ -28,9 +26,8 @@ import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
-import java.util.HashMap;
+public class adBookDetails extends AppCompatActivity {
 
-public class AddDetails extends AppCompatActivity {
 
     private EditText adtitle;
     private EditText addescription;
@@ -41,13 +38,14 @@ public class AddDetails extends AppCompatActivity {
     private Uri imageUri;
 
     private FirebaseDatabase db = FirebaseDatabase.getInstance();
-    private DatabaseReference mDatabaseRef = db.getReference().child("Ad Details");
+    private DatabaseReference mDatabaseRef = db.getReference().child("Books");
     private StorageReference mStorageRef = FirebaseStorage.getInstance().getReference("Image");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_details);
+        setContentView(R.layout.activity_ad_book_details);
+
         getSupportActionBar().hide(); // it is to hide the title bar of this particular page only
 
 
@@ -104,7 +102,7 @@ public class AddDetails extends AppCompatActivity {
             fileRef.putFile(imageUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                 @Override
                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                    Toast.makeText(AddDetails.this, "Upload Successful", Toast.LENGTH_LONG).show();
+                    Toast.makeText(adBookDetails.this, "Upload Successful", Toast.LENGTH_LONG).show();
                     Model upload = new Model(adtitle.getText().toString().trim(),addescription.getText().toString().trim(),
                             adprice.getText().toString().trim(),adlocation.getText().toString().trim(),taskSnapshot.getUploadSessionUri().toString());
                     String uploadId = mDatabaseRef.push().getKey();
@@ -113,7 +111,7 @@ public class AddDetails extends AppCompatActivity {
             }).addOnFailureListener(new OnFailureListener() {
                 @Override
                 public void onFailure(@NonNull Exception e) {
-                    Toast.makeText(AddDetails.this, e.getMessage(), Toast.LENGTH_LONG).show();
+                    Toast.makeText(adBookDetails.this, e.getMessage(), Toast.LENGTH_LONG).show();
                 }
             }).addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
                 @Override
@@ -122,7 +120,7 @@ public class AddDetails extends AppCompatActivity {
                 }
             });
         }else{
-            Toast.makeText(AddDetails.this, "No file Selected", Toast.LENGTH_LONG).show();
+            Toast.makeText(adBookDetails.this, "No file Selected", Toast.LENGTH_LONG).show();
         }
     }
 

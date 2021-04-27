@@ -7,7 +7,7 @@
     android:layout_gravity="center"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context=".PostAdd.AddDetails"
+    tools:context=".PostAdd.adVehicleDetails"
     >
 
     <LinearLayout
@@ -186,6 +186,7 @@
             android:layout_height="wrap_content"
             android:backgroundTint="#6ad3d6"
             android:text="@string/next"
+            android:textColor="@color/white"
             android:textSize="18sp"
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
