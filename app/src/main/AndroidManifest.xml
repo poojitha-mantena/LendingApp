@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.lendingapp">
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:allowBackup="true"
@@ -9,13 +10,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.LendingApp">
-        <activity android:name=".PostAdd.adHardwareDetails">
-
-        </activity>
-        <activity android:name=".PostAdd.ad_electronic_details" >
-
-        </activity>
-        <activity android:name=".PostAdd.adBookDetails" />
+        <activity android:name=".PostAdd.AdElectronicsDetails"></activity>
+        <activity android:name=".Categories.Hardware" />
+        <activity android:name=".Categories.Vechiles" />
         <activity android:name=".ForgotPassword" />
         <activity android:name=".SplashScreen.SplashPage" />
         <activity android:name=".ProductDetails.ProductDetailsPage" />
@@ -26,15 +23,15 @@
         <activity android:name=".Categories.Bikes" />
         <activity android:name=".Categories.Electronics" />
         <activity android:name=".Categories.Books" />
-        <activity android:name=".Dashboard.SelectCategoryPage" />
-        <activity android:name=".Navigation.NavigationBar" />
-        <activity android:name=".PostAdd.adVehicleDetails">
+        <activity android:name=".Dashboard.SelectCategoryPage">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".Navigation.NavigationBar" />
+        <activity android:name=".PostAdd.AddDetails" />
         <activity android:name=".SplashScreen.LandingPages" />
         <activity android:name=".Credentials.LoginActivity" />
         <activity android:name=".Credentials.SignUpActivity" />

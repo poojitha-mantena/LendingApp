@@ -4,23 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Categories.Books">
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/books_recyclerview"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
-
-
-    </LinearLayout>
-
+    tools:context=".Categories.Hardware">
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/add_books_button"
+        android:id="@+id/add_hardware_button"
         android:backgroundTint="#6ad3d6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -29,7 +16,5 @@
         app:fabSize="normal"
         android:elevation="6dp"
         android:src="@drawable/ic_add"/>
-
-
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

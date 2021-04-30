@@ -26,7 +26,7 @@ import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
-public class ad_electronic_details extends AppCompatActivity {
+public class AdHardwareDetails extends AppCompatActivity {
 
     private EditText adtitle;
     private EditText addescription;
@@ -37,13 +37,13 @@ public class ad_electronic_details extends AppCompatActivity {
     private Uri imageUri;
 
     private FirebaseDatabase db = FirebaseDatabase.getInstance();
-    private DatabaseReference mDatabaseRef = db.getReference().child("Electronics");
+    private DatabaseReference mDatabaseRef = db.getReference().child("Hardwares");
     private StorageReference mStorageRef = FirebaseStorage.getInstance().getReference("Image");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_ad_electronic_details);
+        setContentView(R.layout.activity_ad_hardware_details);
 
         getSupportActionBar().hide(); // it is to hide the title bar of this particular page only
 
@@ -101,7 +101,7 @@ public class ad_electronic_details extends AppCompatActivity {
             fileRef.putFile(imageUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                 @Override
                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                    Toast.makeText(ad_electronic_details.this, "Upload Successful", Toast.LENGTH_LONG).show();
+                    Toast.makeText(AdHardwareDetails.this, "Upload Successful", Toast.LENGTH_LONG).show();
                     Model upload = new Model(adtitle.getText().toString().trim(),addescription.getText().toString().trim(),
                             adprice.getText().toString().trim(),adlocation.getText().toString().trim(),taskSnapshot.getUploadSessionUri().toString());
                     String uploadId = mDatabaseRef.push().getKey();
@@ -110,7 +110,7 @@ public class ad_electronic_details extends AppCompatActivity {
             }).addOnFailureListener(new OnFailureListener() {
                 @Override
                 public void onFailure(@NonNull Exception e) {
-                    Toast.makeText(ad_electronic_details.this, e.getMessage(), Toast.LENGTH_LONG).show();
+                    Toast.makeText(AdHardwareDetails.this, e.getMessage(), Toast.LENGTH_LONG).show();
                 }
             }).addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
                 @Override
@@ -119,7 +119,7 @@ public class ad_electronic_details extends AppCompatActivity {
                 }
             });
         }else{
-            Toast.makeText(ad_electronic_details.this, "No file Selected", Toast.LENGTH_LONG).show();
+            Toast.makeText(AdHardwareDetails.this, "No file Selected", Toast.LENGTH_LONG).show();
         }
     }
 
