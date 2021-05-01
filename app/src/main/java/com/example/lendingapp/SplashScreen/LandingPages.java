@@ -25,7 +25,7 @@ public class LandingPages extends AppCompatActivity {
     LinearLayout dotsLayout;
     SliderAdapter sliderAdapter;
     TextView[] dots;
-    Button letsGetStarted;
+    Button letsGetStarted, nextArrow;
     Animation animation;
     int currentPos;
 
@@ -39,6 +39,7 @@ public class LandingPages extends AppCompatActivity {
         viewPager = findViewById(R.id.slider);
         dotsLayout = findViewById(R.id.dots);
         letsGetStarted = findViewById(R.id.get_started_btn);
+        nextArrow = findViewById(R.id.next_btn);
 
         sliderAdapter = new SliderAdapter(this);
         viewPager.setAdapter(sliderAdapter);
@@ -53,6 +54,13 @@ public class LandingPages extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(LandingPages.this, LoginActivity.class);
                 startActivity(intent);
+            }
+        });
+
+        nextArrow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                viewPager.setCurrentItem(currentPos + 1);
             }
         });
 
@@ -99,10 +107,16 @@ public class LandingPages extends AppCompatActivity {
 
             if (position == 0) {
                 letsGetStarted.setVisibility(View.INVISIBLE);
+                nextArrow.setVisibility(View.VISIBLE);
+                dotsLayout.setVisibility(View.VISIBLE);
             } else if (position == 1) {
                 letsGetStarted.setVisibility(View.INVISIBLE);
+                nextArrow.setVisibility(View.VISIBLE);
+                dotsLayout.setVisibility(View.VISIBLE);
             } else {
                 letsGetStarted.setVisibility(View.VISIBLE);
+                nextArrow.setVisibility(View.INVISIBLE);
+                dotsLayout.setVisibility(View.INVISIBLE);
             }
 
 

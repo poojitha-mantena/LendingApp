@@ -32,7 +32,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_marginBottom="65dp"
-            android:background="@color/design_default_color_primary"
+            android:background="@drawable/custom_login_btn"
             android:text="@string/lets_get_started"
             android:textSize="20dp"
             android:visibility="invisible" />
@@ -41,21 +41,22 @@
             android:id="@+id/dots"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
             android:paddingBottom="20dp"
             android:orientation="horizontal"/>
 
         <Button
             android:id="@+id/next_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:layout_centerVertical="true"
             android:layout_alignParentRight="true"
-            android:layout_alignParentBottom="true"
             android:layout_marginRight="0dp"
-            android:layout_marginBottom="-5dp"
-            android:background="#00000000"
-            android:drawableEnd="@drawable/next_btn"
-            android:paddingBottom="30dp" />
+            android:layout_marginBottom="5dp"
+            android:text="Next"
+            android:textColor="@color/white"
+            android:background="@drawable/custom_login_btn" />
 
     </RelativeLayout>
 
