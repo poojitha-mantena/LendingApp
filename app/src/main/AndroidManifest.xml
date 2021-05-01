@@ -10,31 +10,33 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.LendingApp">
-        <activity android:name=".PostAdd.AdElectronicsDetails"></activity>
         <activity android:name=".Categories.Hardware" />
         <activity android:name=".Categories.Vechiles" />
         <activity android:name=".ForgotPassword" />
-        <activity android:name=".SplashScreen.SplashPage" />
-        <activity android:name=".ProductDetails.ProductDetailsPage" />
-        <activity android:name=".Chat.ChatPage" />
-        <activity android:name=".Categories.Laptops" />
-        <activity android:name=".Categories.Mobiles" />
-        <activity android:name=".Categories.Clothes" />
-        <activity android:name=".Categories.Bikes" />
-        <activity android:name=".Categories.Electronics" />
-        <activity android:name=".Categories.Books" />
-        <activity android:name=".Dashboard.SelectCategoryPage">
+        <activity android:name=".SplashScreen.SplashPage">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".ProductDetails.ProductDetailsPage" />
+        <activity android:name=".Chat.ChatPage" />
+        <activity android:name=".Categories.Clothes" />
+        <activity android:name=".Categories.Electronics" />
+        <activity android:name=".Categories.Books" />
+        <activity android:name=".Dashboard.SelectCategoryPage">
+
+        </activity>
         <activity android:name=".Navigation.NavigationBar" />
-        <activity android:name=".PostAdd.AddDetails" />
-        <activity android:name=".SplashScreen.LandingPages" />
+        <activity android:name=".SplashScreen.LandingPages" >
+
+        </activity>
         <activity android:name=".Credentials.LoginActivity" />
         <activity android:name=".Credentials.SignUpActivity" />
+        <activity android:name=".PostAdd.AdHardwareDetails"></activity>
+        <activity android:name=".PostAdd.AdBookDetails"></activity>
+        <activity android:name=".PostAdd.AdVehicleDetails"></activity>
     </application>
 
 </manifest>

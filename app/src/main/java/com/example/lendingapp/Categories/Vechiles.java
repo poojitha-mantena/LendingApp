@@ -24,6 +24,7 @@ public class Vechiles extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Vechiles.this, AdVehicleDetails.class);
+                startActivity(intent);
             }
         });
     }
