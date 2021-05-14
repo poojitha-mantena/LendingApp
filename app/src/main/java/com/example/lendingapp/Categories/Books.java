@@ -15,6 +15,7 @@ import com.example.lendingapp.BooksAdapter;
 import com.example.lendingapp.Model.Model;
 import com.example.lendingapp.ModelBooks;
 import com.example.lendingapp.PostAdd.AdBookDetails;
+import com.example.lendingapp.PostAdd.AdVehicleDetails;
 import com.example.lendingapp.R;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -38,6 +39,16 @@ public class Books extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_books);
         getSupportActionBar().setTitle("Books");
+
+        FloatingActionButton fab;
+        fab = findViewById(R.id.add_books_button);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Books.this, AdBookDetails.class);
+                startActivity(intent);
+            }
+        });
 
         recyclerView=(RecyclerView)findViewById(R.id.books_recyclerview);
         database=FirebaseDatabase.getInstance().getReference("Books");

@@ -51,7 +51,7 @@ public class AdVehicleDetails extends AppCompatActivity {
         addescription = (EditText)findViewById(R.id.AdDescription);
         adprice = (EditText)findViewById(R.id.Price);
         adlocation = (EditText)findViewById(R.id.Location);
-        uploadbtn = (Button)findViewById(R.id.btnNext);
+        uploadbtn = (Button)findViewById(R.id.btnVehicleUpload);
         imageView = (ImageView)findViewById(R.id.imageSelected);
 
 
