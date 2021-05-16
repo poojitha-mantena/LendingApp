@@ -8,16 +8,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AbsListView;
-import android.widget.Adapter;
 
 import com.example.lendingapp.BooksAdapter;
 import com.example.lendingapp.Model.Model;
-import com.example.lendingapp.ModelBooks;
 import com.example.lendingapp.PostAdd.AdBookDetails;
-import com.example.lendingapp.PostAdd.AdVehicleDetails;
 import com.example.lendingapp.R;
-import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -33,7 +28,7 @@ public class Books extends AppCompatActivity {
     RecyclerView recyclerView;
     DatabaseReference database;
     BooksAdapter booksAdapter;
-    List<ModelBooks> list;
+    List<Model> list;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,7 +58,7 @@ public class Books extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for(DataSnapshot dataSnapshot: snapshot.getChildren()){
-                    ModelBooks books=dataSnapshot.getValue(ModelBooks.class);
+                    Model books = dataSnapshot.getValue(Model.class);
                     list.add(books);
                 }
                 booksAdapter.notifyDataSetChanged();

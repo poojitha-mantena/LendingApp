@@ -2,7 +2,7 @@ package com.example.lendingapp.Model;
 
 public class Model {
 
-    private String imageUrl;
+    private String mimageUrl;
     private String mtitle;
     private String mdescription;
     private String mprice;
@@ -27,7 +27,7 @@ public class Model {
             location = "Enter Locatiion";
         }
 
-        this.imageUrl = imageUrl;
+        this.mimageUrl = imageUrl;
         this.mtitle = title;
         this.mdescription = description;
         this.mprice = price;
@@ -35,42 +35,42 @@ public class Model {
     }
 
     public String getImageUrl() {
-        return imageUrl;
+        return mimageUrl;
     }
 
     public void setImageUrl(String imageUrl) {
-        this.imageUrl = imageUrl;
+        this.mimageUrl = imageUrl;
     }
 
     public String getMtitle() {
         return mtitle;
     }
 
-    public void setMtitle(String mtitle) {
-        this.mtitle = mtitle;
+    public void settitle(String title) {
+        this.mtitle = title;
     }
 
     public String getMdescription() {
         return mdescription;
     }
 
-    public void setMdescription(String mdescription) {
-        this.mdescription = mdescription;
+    public void setdescription(String description) {
+        this.mdescription = description;
     }
 
     public String getMprice() {
         return mprice;
     }
 
-    public void setMprice(String mprice) {
-        this.mprice = mprice;
+    public void setprice(String price) {
+        this.mprice = price;
     }
 
     public String getMlocation() {
         return mlocation;
     }
 
-    public void setMlocation(String mlocation) {
-        this.mlocation = mlocation;
+    public void setlocation(String location) {
+        this.mlocation = location;
     }
 }

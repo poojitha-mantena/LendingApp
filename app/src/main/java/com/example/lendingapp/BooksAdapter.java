@@ -21,9 +21,9 @@ import java.util.List;
 public class BooksAdapter extends RecyclerView.Adapter<BooksAdapter.BooksViewHolder>  {
 
     private Context mContext;
-    private List<ModelBooks> mUploads;
+    private List<Model> mUploads;
 
-    public BooksAdapter(Context context, List<ModelBooks> uploads){
+    public BooksAdapter(Context context, List<Model> uploads){
         mContext=context;
         mUploads=uploads;
     }
@@ -37,11 +37,12 @@ public class BooksAdapter extends RecyclerView.Adapter<BooksAdapter.BooksViewHol
 
     @Override
     public void onBindViewHolder(@NonNull BooksViewHolder holder, int position) {
-         ModelBooks uploadCurrent = mUploads.get(position);
-        holder.bookName.setText(uploadCurrent.getBook_name());
-        holder.bookPrice.setText(uploadCurrent.getBook_price());
-        holder.bookLocation.setText(uploadCurrent.getBook_description());
-        holder.bookDescription.setText(uploadCurrent.getBook_description());
+         Model uploadCurrent = mUploads.get(position);
+        //holder.imageView.setText(uploadCurrent.getMtitle());
+        holder.bookName.setText(uploadCurrent.getMtitle());
+        holder.bookPrice.setText(uploadCurrent.getMprice());
+        holder.bookLocation.setText(uploadCurrent.getMlocation());
+        holder.bookDescription.setText(uploadCurrent.getMdescription());
 
 
     }
