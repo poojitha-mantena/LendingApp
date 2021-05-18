@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -29,6 +30,7 @@ public class Books extends AppCompatActivity {
     DatabaseReference database;
     BooksAdapter booksAdapter;
     List<Model> list;
+    SwipeRefreshLayout swipeRefreshLayout;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,6 +46,35 @@ public class Books extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        // ignore this portion for now its not complete
+
+        swipeRefreshLayout = (SwipeRefreshLayout)findViewById(R.id.swipeRefreshLayout);
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+
+                // repeated the code here to get datas from database.
+//                database.addValueEventListener(new ValueEventListener() {
+//                    @Override
+//                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+//                        for(DataSnapshot dataSnapshot: snapshot.getChildren()){
+//                            Model books = dataSnapshot.getValue(Model.class);
+//                            list.add(books);
+//                        }
+//                        booksAdapter.notifyDataSetChanged();
+//                    }
+//
+//                    @Override
+//                    public void onCancelled(@NonNull DatabaseError error) {
+//
+//                    }
+//                });
+                swipeRefreshLayout.setRefreshing(false);
+            }
+        });
+
+        // ignore until this point.
 
         recyclerView=(RecyclerView)findViewById(R.id.books_recyclerview);
         database=FirebaseDatabase.getInstance().getReference("Books");
