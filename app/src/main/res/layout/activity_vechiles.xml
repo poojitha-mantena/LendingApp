@@ -5,15 +5,33 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Categories.Vechiles">
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/add_vechiles_button"
-        android:backgroundTint="#6ad3d6"
+
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="end|bottom"
-        android:layout_margin="16dp"
-        app:fabSize="normal"
-        android:elevation="6dp"
-        android:src="@drawable/ic_add"/>
+        android:orientation="vertical">
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/chat_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:elevation="6dp"
+            android:src="@drawable/ic_baseline_chat_24_white"
+            app:fabSize="normal" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/add_vechiles_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            app:fabSize="normal"
+            android:elevation="6dp"
+            android:src="@drawable/ic_baseline_add_24"/>
+
+    </LinearLayout>
+
+
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
