@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.lendingapp">
-    <uses-permission android:name="android.permission.INTERNET"/>
+    package="com.example.lendingapp" >
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -9,8 +10,8 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.LendingApp">
-        <activity android:name=".PostAdd.AdElectronicsDetails"></activity>
+        android:theme="@style/Theme.LendingApp" >
+        <activity android:name=".PostAdd.AdElectronicsDetails" />
         <activity android:name=".Categories.Hardware" />
         <activity android:name=".Categories.Vechiles" />
         <activity android:name=".ForgotPassword" />
@@ -23,7 +24,7 @@
         <activity android:name=".Categories.Bikes" />
         <activity android:name=".Categories.Electronics" />
         <activity android:name=".Categories.Books" />
-        <activity android:name=".Dashboard.SelectCategoryPage">
+        <activity android:name=".Dashboard.SelectCategoryPage" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

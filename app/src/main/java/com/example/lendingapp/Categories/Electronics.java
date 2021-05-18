@@ -15,14 +15,5 @@ public class Electronics extends AppCompatActivity {
         setContentView(R.layout.activity_electronics);
         getSupportActionBar().setTitle("Electronics");
 
-        FloatingActionButton fab;
-        fab=findViewById(R.id.add_electronics_button);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
-
     }
 }
