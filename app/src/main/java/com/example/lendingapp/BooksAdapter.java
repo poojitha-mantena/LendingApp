@@ -1,6 +1,7 @@
 package com.example.lendingapp;
 
 import android.content.Context;
+import android.icu.text.Transliterator;
 import android.media.Image;
 import android.text.style.UpdateLayout;
 import android.view.LayoutInflater;
@@ -13,8 +14,10 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.lendingapp.Model.Model;
+import com.bumptech.glide.Glide;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -24,8 +27,8 @@ public class BooksAdapter extends RecyclerView.Adapter<BooksAdapter.BooksViewHol
     private List<Model> mUploads;
 
     public BooksAdapter(Context context, List<Model> uploads){
-        mContext=context;
-        mUploads=uploads;
+        mContext = context;
+        mUploads = uploads;
     }
 
     @NonNull
@@ -38,7 +41,11 @@ public class BooksAdapter extends RecyclerView.Adapter<BooksAdapter.BooksViewHol
     @Override
     public void onBindViewHolder(@NonNull BooksViewHolder holder, int position) {
          Model uploadCurrent = mUploads.get(position);
-        //holder.imageView.setText(uploadCurrent.getMtitle());
+        //Glide.with(mContext).load(uploadCurrent.getImageUrl()).into(holder.imageView);
+        //Glide.with(mContext).load(mUploads.get(position).getImageUrl()).into(holder.imageView);
+        //Picasso.get().load(uploadCurrent.getImageUrl()).into(holder.imageView);
+        Picasso.get().load(uploadCurrent.getImageUrl()).fit().centerCrop()
+                .into(holder.imageView);
         holder.bookName.setText(uploadCurrent.getMtitle());
         holder.bookPrice.setText(uploadCurrent.getMprice());
         holder.bookLocation.setText(uploadCurrent.getMlocation());
@@ -63,7 +70,7 @@ public class BooksAdapter extends RecyclerView.Adapter<BooksAdapter.BooksViewHol
             bookPrice=itemView.findViewById(R.id.itemPrice);
             bookLocation=itemView.findViewById(R.id.itemLocation);
             bookDescription=itemView.findViewById(R.id.item_description);
-            imageView=itemView.findViewById(R.id.imageView);
+            imageView = itemView.findViewById(R.id.productImage);
 
         }
     }
