@@ -77,8 +77,8 @@ public class Electronics extends AppCompatActivity {
 
         // ignore until this point.
 
-        recyclerView=(RecyclerView)findViewById(R.id.books_recyclerview);
-        database= FirebaseDatabase.getInstance().getReference("Books");
+        recyclerView=(RecyclerView)findViewById(R.id.electronics_recyclerview);
+        database= FirebaseDatabase.getInstance().getReference("Electronics");
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
@@ -90,8 +90,8 @@ public class Electronics extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for(DataSnapshot dataSnapshot: snapshot.getChildren()){
-                    Model books = dataSnapshot.getValue(Model.class);
-                    list.add(books);
+                    Model electronics = dataSnapshot.getValue(Model.class);
+                    list.add(electronics);
                 }
                 electronicsAdapter.notifyDataSetChanged();
             }
