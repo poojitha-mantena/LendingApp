@@ -10,7 +10,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import com.example.lendingapp.BooksAdapter;
+import com.example.lendingapp.Adapters.BooksAdapter;
 import com.example.lendingapp.Model.Model;
 import com.example.lendingapp.PostAdd.AdBookDetails;
 import com.example.lendingapp.R;
