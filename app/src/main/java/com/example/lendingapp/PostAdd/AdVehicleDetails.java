@@ -101,8 +101,12 @@ public class AdVehicleDetails extends AppCompatActivity {
                 @Override
                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                     Toast.makeText(AdVehicleDetails.this, "Upload Successful", Toast.LENGTH_LONG).show();
-                    Model upload = new Model(adtitle.getText().toString().trim(),addescription.getText().toString().trim(),
-                            adprice.getText().toString().trim(),adlocation.getText().toString().trim(),taskSnapshot.getUploadSessionUri().toString());
+                    Model upload = new Model(taskSnapshot.getUploadSessionUri().toString(),
+                            adtitle.getText().toString().trim(),
+                            addescription.getText().toString().trim(),
+                            adprice.getText().toString().trim(),
+                            adlocation.getText().toString().trim());
+
                     String uploadId = mDatabaseRef.push().getKey();
                     mDatabaseRef.child(uploadId).setValue(upload);
                 }

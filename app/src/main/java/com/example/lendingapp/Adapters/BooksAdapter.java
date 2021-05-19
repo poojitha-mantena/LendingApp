@@ -1,9 +1,6 @@
-package com.example.lendingapp;
+package com.example.lendingapp.Adapters;
 
 import android.content.Context;
-import android.icu.text.Transliterator;
-import android.media.Image;
-import android.text.style.UpdateLayout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,9 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.lendingapp.Model.Model;
-import com.bumptech.glide.Glide;
-import com.firebase.ui.database.FirebaseRecyclerAdapter;
-import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.example.lendingapp.R;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
