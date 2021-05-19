@@ -70,7 +70,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="VEHICLE"
+                    android:text="VEHICLES"
                     android:textAlignment="center"
                     android:textStyle="bold" />
             </LinearLayout>
@@ -111,6 +111,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/hardwareCard"
             android:layout_width="80dp"
             android:layout_height="40dp"
             android:layout_row="1"
@@ -132,14 +133,16 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/clothes" />
+                    android:src="@drawable/hardware" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="CLOTHES"
+                    android:text="HARDWARE"
                     android:textAlignment="center"
                     android:textStyle="bold" />
+
+
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
@@ -179,7 +182,7 @@
 
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/hardwareCard"
+
             android:layout_width="80dp"
             android:layout_height="40dp"
             android:layout_row="2"
@@ -201,14 +204,16 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/hardware" />
+                    android:src="@drawable/clothes" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="HARDWARE"
+                    android:text="CLOTHES"
                     android:textAlignment="center"
                     android:textStyle="bold" />
+
+
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
