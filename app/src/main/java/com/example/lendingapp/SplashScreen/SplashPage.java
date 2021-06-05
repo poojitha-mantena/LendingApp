@@ -69,8 +69,7 @@ public class SplashPage extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animation animation) {
-                //startActivity(new Intent(SplashPage.this, LandingPages.class));
-                //finish();
+
             }
 
             @Override
