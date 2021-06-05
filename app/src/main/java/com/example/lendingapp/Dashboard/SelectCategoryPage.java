@@ -17,7 +17,9 @@ import com.example.lendingapp.Categories.Books;
 import com.example.lendingapp.Categories.Electronics;
 import com.example.lendingapp.Categories.Hardware;
 import com.example.lendingapp.Categories.Vechiles;
+import com.example.lendingapp.Credentials.LoginActivity;
 import com.example.lendingapp.R;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class SelectCategoryPage extends AppCompatActivity {
 
@@ -94,7 +96,8 @@ public class SelectCategoryPage extends AppCompatActivity {
             Toast.makeText(this, "You clicked chats", Toast.LENGTH_SHORT).show();
         }
         else if(item.getItemId()==R.id.logout){
-            Toast.makeText(this, "You clicked logout", Toast.LENGTH_SHORT).show();
+            FirebaseAuth.getInstance().signOut();
+            startActivity(new Intent(SelectCategoryPage.this, LoginActivity.class));
         }
         else{
             return super.onOptionsItemSelected(item);
