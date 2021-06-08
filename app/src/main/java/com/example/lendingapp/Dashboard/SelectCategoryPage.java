@@ -1,5 +1,6 @@
 package com.example.lendingapp.Dashboard;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
@@ -8,13 +9,17 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.Menu;
 import android.view.View;
+import android.widget.Toast;
 
 import com.example.lendingapp.Categories.Books;
 import com.example.lendingapp.Categories.Electronics;
 import com.example.lendingapp.Categories.Hardware;
 import com.example.lendingapp.Categories.Vechiles;
+import com.example.lendingapp.Credentials.LoginActivity;
 import com.example.lendingapp.R;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class SelectCategoryPage extends AppCompatActivity {
 
@@ -29,11 +34,12 @@ public class SelectCategoryPage extends AppCompatActivity {
         setContentView(R.layout.activity_select_category_page);
         //getSupportActionBar().hide();
 
-        mDrawerlayout = (DrawerLayout) findViewById(R.id.drawer);
+        /*mDrawerlayout = (DrawerLayout) findViewById(R.id.drawer);
         mToggle = new ActionBarDrawerToggle(SelectCategoryPage.this,mDrawerlayout,R.string.open,R.string.close);
         mDrawerlayout.addDrawerListener(mToggle);
         mToggle.syncState();
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);*/
+
 
         VechilesCard = (CardView) findViewById(R.id.vechileCard);
         BooksCard = (CardView) findViewById(R.id.booksCard);
@@ -78,12 +84,27 @@ public class SelectCategoryPage extends AppCompatActivity {
 
 
     }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.drawermenu,menu);
+        return true;
+    }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item){
-        if (mToggle.onOptionsItemSelected(item)){
-            return true;
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if(item.getItemId()==R.id.myads){
+            Toast.makeText(this, "You clicked my adds", Toast.LENGTH_SHORT).show();
         }
-        return super.onOptionsItemSelected(item);
+        else if(item.getItemId()==R.id.chat){
+            Toast.makeText(this, "You clicked chats", Toast.LENGTH_SHORT).show();
+        }
+        else if(item.getItemId()==R.id.logout){
+            FirebaseAuth.getInstance().signOut();
+            startActivity(new Intent(SelectCategoryPage.this, LoginActivity.class));
+        }
+        else{
+            return super.onOptionsItemSelected(item);
+        }
+        return true;
     }
 }
