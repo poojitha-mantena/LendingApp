@@ -15,7 +15,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.example.lendingapp.Model.Model;
+import com.example.lendingapp.Model.NewModel;
 import com.example.lendingapp.R;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -101,7 +101,7 @@ public class AdElectronicsDetails extends AppCompatActivity {
                 @Override
                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                     Toast.makeText(AdElectronicsDetails.this, "Upload Successful", Toast.LENGTH_LONG).show();
-                    Model upload = new Model(taskSnapshot.getUploadSessionUri().toString(),adtitle.getText().toString().trim(),addescription.getText().toString().trim(),
+                    NewModel upload = new NewModel(taskSnapshot.getUploadSessionUri().toString(),adtitle.getText().toString().trim(),addescription.getText().toString().trim(),
                             adprice.getText().toString().trim(),adlocation.getText().toString().trim());
                     String uploadId = mDatabaseRef.push().getKey();
                     mDatabaseRef.child(uploadId).setValue(upload);

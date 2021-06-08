@@ -10,7 +10,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import com.example.lendingapp.Model.Model;
+import com.example.lendingapp.Model.NewModel;
 import com.example.lendingapp.PostAdd.AdVehicleDetails;
 import com.example.lendingapp.R;
 import com.example.lendingapp.Adapters.VehiclesAdapter;
@@ -29,7 +29,7 @@ public class Vechiles extends AppCompatActivity {
     RecyclerView recyclerView;
     DatabaseReference database;
     VehiclesAdapter vehiclesAdapter;
-    List<Model> list;
+    List<NewModel> list;
     SwipeRefreshLayout swipeRefreshLayout;
 
     @Override
@@ -89,7 +89,7 @@ public class Vechiles extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for(DataSnapshot dataSnapshot: snapshot.getChildren()){
-                    Model vehicles = dataSnapshot.getValue(Model.class);
+                    NewModel vehicles = dataSnapshot.getValue(NewModel.class);
                     list.add(vehicles);
                 }
                 vehiclesAdapter.notifyDataSetChanged();

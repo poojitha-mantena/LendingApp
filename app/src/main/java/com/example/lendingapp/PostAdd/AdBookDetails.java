@@ -15,7 +15,8 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.example.lendingapp.Model.Model;
+import com.bumptech.glide.Glide;
+import com.example.lendingapp.Model.NewModel;
 import com.example.lendingapp.R;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -25,6 +26,7 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
+import com.squareup.picasso.Picasso;
 
 public class AdBookDetails extends AppCompatActivity {
 
@@ -84,7 +86,11 @@ public class AdBookDetails extends AppCompatActivity {
         if (requestCode == 2 && resultCode == RESULT_OK && data != null && data.getData() != null){
 
             imageUri = data.getData();
-            imageView.setImageURI(imageUri);
+            //imageView.setImageURI(imageUri);
+//            Picasso.with(this).load(imageUri).into(imageView);
+            //Picasso.get().load(imageUri).into(imageView);
+            Glide.with(this).load(imageUri).into(imageView);
+
 
         }
     }
@@ -103,7 +109,7 @@ public class AdBookDetails extends AppCompatActivity {
                 @Override
                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                     Toast.makeText(AdBookDetails.this, "Upload Successful", Toast.LENGTH_LONG).show();
-                    Model upload = new Model(taskSnapshot.getUploadSessionUri().toString(),adtitle.getText().toString().trim(),addescription.getText().toString().trim(),
+                    NewModel upload = new NewModel(taskSnapshot.getMetadata().getReference().getDownloadUrl().toString(),adtitle.getText().toString().trim(),addescription.getText().toString().trim(),
                             adprice.getText().toString().trim(),adlocation.getText().toString().trim());
                     String uploadId = mDatabaseRef.push().getKey();
                     mDatabaseRef.child(uploadId).setValue(upload);

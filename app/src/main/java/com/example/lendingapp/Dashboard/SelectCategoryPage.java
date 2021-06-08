@@ -40,6 +40,7 @@ public class SelectCategoryPage extends AppCompatActivity {
         ElectronicsCard = (CardView) findViewById(R.id.electronicsCard);
         HardwareCard = (CardView) findViewById(R.id.hardwareCard);
 
+
         VechilesCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -71,6 +72,8 @@ public class SelectCategoryPage extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+
 
 
 

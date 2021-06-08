@@ -10,10 +10,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import com.example.lendingapp.Adapters.BooksAdapter;
 import com.example.lendingapp.Adapters.HardwareAdapter;
-import com.example.lendingapp.Adapters.VehiclesAdapter;
-import com.example.lendingapp.Model.Model;
+import com.example.lendingapp.Model.NewModel;
 import com.example.lendingapp.PostAdd.AdHardwareDetails;
 import com.example.lendingapp.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -31,7 +29,7 @@ public class Hardware extends AppCompatActivity {
     RecyclerView recyclerView;
     DatabaseReference database;
     HardwareAdapter hardareAdapter;
-    List<Model> list;
+    List<NewModel> list;
     SwipeRefreshLayout swipeRefreshLayout;
 
     @Override
@@ -91,7 +89,7 @@ public class Hardware extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for(DataSnapshot dataSnapshot: snapshot.getChildren()){
-                    Model hardware = dataSnapshot.getValue(Model.class);
+                    NewModel hardware = dataSnapshot.getValue(NewModel.class);
                     list.add(hardware);
                 }
                 hardareAdapter.notifyDataSetChanged();

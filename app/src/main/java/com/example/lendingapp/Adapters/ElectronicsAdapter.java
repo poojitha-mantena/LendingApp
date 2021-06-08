@@ -7,10 +7,9 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.lendingapp.Model.Model;
+import com.example.lendingapp.Model.NewModel;
 import com.example.lendingapp.R;
 import com.squareup.picasso.Picasso;
 
@@ -19,9 +18,9 @@ import java.util.List;
 public class ElectronicsAdapter extends RecyclerView.Adapter<ElectronicsAdapter.ElectronicsViewHolder> {
 
     private Context mContext;
-    private List<Model> mUploads;
+    private List<NewModel> mUploads;
 
-    public ElectronicsAdapter(Context context, List<Model> uploads){
+    public ElectronicsAdapter(Context context, List<NewModel> uploads){
         mContext = context;
         mUploads = uploads;
     }
@@ -34,16 +33,17 @@ public class ElectronicsAdapter extends RecyclerView.Adapter<ElectronicsAdapter.
 
     @Override
     public void onBindViewHolder(ElectronicsAdapter.ElectronicsViewHolder holder, int position) {
-        Model uploadCurrent = mUploads.get(position);
+        NewModel uploadCurrent = mUploads.get(position);
         //Glide.with(mContext).load(uploadCurrent.getImageUrl()).into(holder.imageView);
         //Glide.with(mContext).load(mUploads.get(position).getImageUrl()).into(holder.imageView);
         //Picasso.get().load(uploadCurrent.getImageUrl()).into(holder.imageView);
-        Picasso.get().load(uploadCurrent.getImageUrl()).fit().centerCrop()
+        Picasso.get().load(uploadCurrent.getXimageUrl()).fit().centerCrop()
                 .into(holder.electronicImage);
-        holder.electronicName.setText(uploadCurrent.getMtitle());
-        holder.electronicPrice.setText(uploadCurrent.getMprice());
-        holder.electronicLocation.setText(uploadCurrent.getMlocation());
-        holder.electronicDescription.setText(uploadCurrent.getMdescription());
+//        Picasso.with(mContext).load(uploadCurrent.getImageUrl()).fit().centerCrop().into(holder.electronicImage);
+        holder.electronicName.setText(uploadCurrent.getXtitle());
+        holder.electronicPrice.setText(uploadCurrent.getXprice());
+        holder.electronicLocation.setText(uploadCurrent.getXlocation());
+        holder.electronicDescription.setText(uploadCurrent.getXdescription());
 
     }
 

@@ -11,7 +11,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.example.lendingapp.Adapters.BooksAdapter;
-import com.example.lendingapp.Model.Model;
+import com.example.lendingapp.Model.NewModel;
 import com.example.lendingapp.PostAdd.AdBookDetails;
 import com.example.lendingapp.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -29,8 +29,10 @@ public class Books extends AppCompatActivity {
     RecyclerView recyclerView;
     DatabaseReference database;
     BooksAdapter booksAdapter;
-    List<Model> list;
+    List <NewModel> list;
     SwipeRefreshLayout swipeRefreshLayout;
+
+
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -76,8 +78,10 @@ public class Books extends AppCompatActivity {
 
         // ignore until this point.
 
-        recyclerView=(RecyclerView)findViewById(R.id.books_recyclerview);
-        database=FirebaseDatabase.getInstance().getReference("Books");
+
+
+        recyclerView = (RecyclerView)findViewById(R.id.books_recyclerview);
+        database = FirebaseDatabase.getInstance().getReference("Books");
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
@@ -89,10 +93,12 @@ public class Books extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for(DataSnapshot dataSnapshot: snapshot.getChildren()){
-                    Model books = dataSnapshot.getValue(Model.class);
+                    NewModel books = dataSnapshot.getValue(NewModel.class);
                     list.add(books);
                 }
-                booksAdapter.notifyDataSetChanged();
+                booksAdapter = new BooksAdapter(Books.this, list);
+                recyclerView.setAdapter(booksAdapter);
+                //booksAdapter.notifyDataSetChanged();
             }
 
             @Override

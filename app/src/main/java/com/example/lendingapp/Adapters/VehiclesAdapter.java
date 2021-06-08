@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.lendingapp.Model.Model;
+import com.example.lendingapp.Model.NewModel;
 import com.example.lendingapp.R;
 import com.squareup.picasso.Picasso;
 
@@ -18,9 +18,9 @@ import java.util.List;
 public class VehiclesAdapter extends RecyclerView.Adapter<VehiclesAdapter.vehiclesViewHolder> {
 
     private Context mContext;
-    private List<Model> mUploads;
+    private List<NewModel> mUploads;
 
-    public VehiclesAdapter(Context context, List<Model> uploads){
+    public VehiclesAdapter(Context context, List<NewModel> uploads){
         mContext = context;
         mUploads = uploads;
     }
@@ -35,16 +35,17 @@ public class VehiclesAdapter extends RecyclerView.Adapter<VehiclesAdapter.vehicl
     @Override
     public void onBindViewHolder(VehiclesAdapter.vehiclesViewHolder holder, int position) {
 
-        Model uploadCurrent = mUploads.get(position);
+        NewModel uploadCurrent = mUploads.get(position);
         //Glide.with(mContext).load(uploadCurrent.getImageUrl()).into(holder.imageView);
         //Glide.with(mContext).load(mUploads.get(position).getImageUrl()).into(holder.imageView);
         //Picasso.get().load(uploadCurrent.getImageUrl()).into(holder.imageView);
-        Picasso.get().load(uploadCurrent.getImageUrl()).fit().centerCrop()
+        Picasso.get().load(uploadCurrent.getXimageUrl()).fit().centerCrop()
                 .into(holder.vehicleImage);
-        holder.vehicleName.setText(uploadCurrent.getMtitle());
-        holder.vehiclePrice.setText(uploadCurrent.getMprice());
-        holder.vehileLocation.setText(uploadCurrent.getMlocation());
-        holder.vehileDescription.setText(uploadCurrent.getMdescription());
+        //Picasso.with(mContext).load(uploadCurrent.getImageUrl()).fit().centerCrop().into(holder.vehicleImage);
+        holder.vehicleName.setText(uploadCurrent.getXtitle());
+        holder.vehiclePrice.setText(uploadCurrent.getXprice());
+        holder.vehileLocation.setText(uploadCurrent.getXlocation());
+        holder.vehileDescription.setText(uploadCurrent.getXdescription());
 
     }
 

@@ -10,7 +10,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.lendingapp.Model.Model;
+import com.bumptech.glide.Glide;
+import com.example.lendingapp.Model.NewModel;
 import com.example.lendingapp.R;
 import com.squareup.picasso.Picasso;
 
@@ -19,9 +20,9 @@ import java.util.List;
 public class BooksAdapter extends RecyclerView.Adapter<BooksAdapter.BooksViewHolder>  {
 
     private Context mContext;
-    private List<Model> mUploads;
+    private List<NewModel> mUploads;
 
-    public BooksAdapter(Context context, List<Model> uploads){
+    public BooksAdapter(Context context, List<NewModel> uploads){
         mContext = context;
         mUploads = uploads;
     }
@@ -35,16 +36,23 @@ public class BooksAdapter extends RecyclerView.Adapter<BooksAdapter.BooksViewHol
 
     @Override
     public void onBindViewHolder(@NonNull BooksViewHolder holder, int position) {
-         Model uploadCurrent = mUploads.get(position);
-        //Glide.with(mContext).load(uploadCurrent.getImageUrl()).into(holder.imageView);
+         NewModel uploadCurrent = mUploads.get(position);
+        Glide.with(mContext).load(uploadCurrent.getXimageUrl()).into(holder.imageView);
         //Glide.with(mContext).load(mUploads.get(position).getImageUrl()).into(holder.imageView);
-        //Picasso.get().load(uploadCurrent.getImageUrl()).into(holder.imageView);
-        Picasso.get().load(uploadCurrent.getImageUrl()).fit().centerCrop()
-                .into(holder.imageView);
-        holder.bookName.setText(uploadCurrent.getMtitle());
-        holder.bookPrice.setText(uploadCurrent.getMprice());
-        holder.bookLocation.setText(uploadCurrent.getMlocation());
-        holder.bookDescription.setText(uploadCurrent.getMdescription());
+        //Picasso.get().load(uploadCurrent.getXimageUrl()).into(holder.imageView);
+        //Picasso.get().load(String.valueOf(NewModel.class)).into(holder.imageView);
+       
+        //Picasso.with(mContext).load(uploadCurrent.getImageUrl()).fit().centerCrop().into(holder.imageView);
+        holder.bookName.setText(uploadCurrent.getXtitle());
+        holder.bookPrice.setText(uploadCurrent.getXprice());
+        holder.bookLocation.setText(uploadCurrent.getXlocation());
+        holder.bookDescription.setText(uploadCurrent.getXdescription());
+
+//        String img_url = uploadCurrent.getXimageUrl();
+//        if (!img_url.equalsIgnoreCase(""))
+//            Picasso.get().load(img_url)// Place holder image from drawable folder
+//                    .resize(110, 110).centerCrop()
+//                    .into(holder.imageView);
 
 
     }

@@ -7,10 +7,9 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.lendingapp.Model.Model;
+import com.example.lendingapp.Model.NewModel;
 import com.example.lendingapp.R;
 import com.squareup.picasso.Picasso;
 
@@ -19,9 +18,9 @@ import java.util.List;
 public class HardwareAdapter extends RecyclerView.Adapter<HardwareAdapter.HardwareViewHolder> {
 
     private Context mContext;
-    private List<Model> mUploads;
+    private List<NewModel> mUploads;
 
-    public HardwareAdapter(Context context, List<Model> uploads){
+    public HardwareAdapter(Context context, List<NewModel> uploads){
         mContext = context;
         mUploads = uploads;
     }
@@ -34,16 +33,17 @@ public class HardwareAdapter extends RecyclerView.Adapter<HardwareAdapter.Hardwa
 
     @Override
     public void onBindViewHolder(HardwareAdapter.HardwareViewHolder holder, int position) {
-        Model uploadCurrent = mUploads.get(position);
+        NewModel uploadCurrent = mUploads.get(position);
         //Glide.with(mContext).load(uploadCurrent.getImageUrl()).into(holder.imageView);
         //Glide.with(mContext).load(mUploads.get(position).getImageUrl()).into(holder.imageView);
         //Picasso.get().load(uploadCurrent.getImageUrl()).into(holder.imageView);
-        Picasso.get().load(uploadCurrent.getImageUrl()).fit().centerCrop()
+        Picasso.get().load(uploadCurrent.getXimageUrl()).fit().centerCrop()
                 .into(holder.hardwareImage);
-        holder.hardwareName.setText(uploadCurrent.getMtitle());
-        holder.hardwarePrice.setText(uploadCurrent.getMprice());
-        holder.hardwareLocation.setText(uploadCurrent.getMlocation());
-        holder.hardwareDescription.setText(uploadCurrent.getMdescription());
+//        Picasso.with(mContext).load(uploadCurrent.getImageUrl()).fit().centerCrop().into(holder.hardwareImage);
+        holder.hardwareName.setText(uploadCurrent.getXtitle());
+        holder.hardwarePrice.setText(uploadCurrent.getXprice());
+        holder.hardwareLocation.setText(uploadCurrent.getXlocation());
+        holder.hardwareDescription.setText(uploadCurrent.getXdescription());
     }
 
     @Override
