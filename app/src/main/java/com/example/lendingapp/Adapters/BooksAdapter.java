@@ -37,22 +37,16 @@ public class BooksAdapter extends RecyclerView.Adapter<BooksAdapter.BooksViewHol
     @Override
     public void onBindViewHolder(@NonNull BooksViewHolder holder, int position) {
          NewModel uploadCurrent = mUploads.get(position);
-        Glide.with(mContext).load(uploadCurrent.getXimageUrl()).into(holder.imageView);
+        //Glide.with(mContext).load(uploadCurrent.getXimageUrl()).into(holder.imageView);
         //Glide.with(mContext).load(mUploads.get(position).getImageUrl()).into(holder.imageView);
         //Picasso.get().load(uploadCurrent.getXimageUrl()).into(holder.imageView);
         //Picasso.get().load(String.valueOf(NewModel.class)).into(holder.imageView);
        
-        //Picasso.with(mContext).load(uploadCurrent.getImageUrl()).fit().centerCrop().into(holder.imageView);
-        holder.bookName.setText(uploadCurrent.getXtitle());
-        holder.bookPrice.setText(uploadCurrent.getXprice());
-        holder.bookLocation.setText(uploadCurrent.getXlocation());
-        holder.bookDescription.setText(uploadCurrent.getXdescription());
-
-//        String img_url = uploadCurrent.getXimageUrl();
-//        if (!img_url.equalsIgnoreCase(""))
-//            Picasso.get().load(img_url)// Place holder image from drawable folder
-//                    .resize(110, 110).centerCrop()
-//                    .into(holder.imageView);
+        Picasso.get().load(uploadCurrent.getimage()).fit().centerCrop().into(holder.imageView);
+        holder.bookName.setText(uploadCurrent.gettitle());
+        holder.bookPrice.setText(uploadCurrent.getprice());
+        holder.bookLocation.setText(uploadCurrent.getlocation());
+        holder.bookDescription.setText(uploadCurrent.getdescription());
 
 
     }

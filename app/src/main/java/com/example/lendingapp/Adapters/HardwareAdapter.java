@@ -37,13 +37,13 @@ public class HardwareAdapter extends RecyclerView.Adapter<HardwareAdapter.Hardwa
         //Glide.with(mContext).load(uploadCurrent.getImageUrl()).into(holder.imageView);
         //Glide.with(mContext).load(mUploads.get(position).getImageUrl()).into(holder.imageView);
         //Picasso.get().load(uploadCurrent.getImageUrl()).into(holder.imageView);
-        Picasso.get().load(uploadCurrent.getXimageUrl()).fit().centerCrop()
+        Picasso.get().load(uploadCurrent.getimage()).fit().centerCrop()
                 .into(holder.hardwareImage);
 //        Picasso.with(mContext).load(uploadCurrent.getImageUrl()).fit().centerCrop().into(holder.hardwareImage);
-        holder.hardwareName.setText(uploadCurrent.getXtitle());
-        holder.hardwarePrice.setText(uploadCurrent.getXprice());
-        holder.hardwareLocation.setText(uploadCurrent.getXlocation());
-        holder.hardwareDescription.setText(uploadCurrent.getXdescription());
+        holder.hardwareName.setText(uploadCurrent.gettitle());
+        holder.hardwarePrice.setText(uploadCurrent.getprice());
+        holder.hardwareLocation.setText(uploadCurrent.getlocation());
+        holder.hardwareDescription.setText(uploadCurrent.getdescription());
     }
 
     @Override

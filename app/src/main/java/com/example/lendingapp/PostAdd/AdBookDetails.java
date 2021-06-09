@@ -88,8 +88,8 @@ public class AdBookDetails extends AppCompatActivity {
             imageUri = data.getData();
             //imageView.setImageURI(imageUri);
 //            Picasso.with(this).load(imageUri).into(imageView);
-            //Picasso.get().load(imageUri).into(imageView);
-            Glide.with(this).load(imageUri).into(imageView);
+            Picasso.get().load(imageUri).into(imageView);
+            //Glide.with(this).load(imageUri).into(imageView);
 
 
         }

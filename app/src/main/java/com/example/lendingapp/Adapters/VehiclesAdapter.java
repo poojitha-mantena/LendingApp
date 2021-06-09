@@ -39,13 +39,13 @@ public class VehiclesAdapter extends RecyclerView.Adapter<VehiclesAdapter.vehicl
         //Glide.with(mContext).load(uploadCurrent.getImageUrl()).into(holder.imageView);
         //Glide.with(mContext).load(mUploads.get(position).getImageUrl()).into(holder.imageView);
         //Picasso.get().load(uploadCurrent.getImageUrl()).into(holder.imageView);
-        Picasso.get().load(uploadCurrent.getXimageUrl()).fit().centerCrop()
+        Picasso.get().load(uploadCurrent.getimage()).fit().centerCrop()
                 .into(holder.vehicleImage);
         //Picasso.with(mContext).load(uploadCurrent.getImageUrl()).fit().centerCrop().into(holder.vehicleImage);
-        holder.vehicleName.setText(uploadCurrent.getXtitle());
-        holder.vehiclePrice.setText(uploadCurrent.getXprice());
-        holder.vehileLocation.setText(uploadCurrent.getXlocation());
-        holder.vehileDescription.setText(uploadCurrent.getXdescription());
+        holder.vehicleName.setText(uploadCurrent.gettitle());
+        holder.vehiclePrice.setText(uploadCurrent.getprice());
+        holder.vehileLocation.setText(uploadCurrent.getlocation());
+        holder.vehileDescription.setText(uploadCurrent.getdescription());
 
     }
 

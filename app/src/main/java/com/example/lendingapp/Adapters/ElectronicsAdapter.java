@@ -37,13 +37,13 @@ public class ElectronicsAdapter extends RecyclerView.Adapter<ElectronicsAdapter.
         //Glide.with(mContext).load(uploadCurrent.getImageUrl()).into(holder.imageView);
         //Glide.with(mContext).load(mUploads.get(position).getImageUrl()).into(holder.imageView);
         //Picasso.get().load(uploadCurrent.getImageUrl()).into(holder.imageView);
-        Picasso.get().load(uploadCurrent.getXimageUrl()).fit().centerCrop()
+        Picasso.get().load(uploadCurrent.getimage()).fit().centerCrop()
                 .into(holder.electronicImage);
 //        Picasso.with(mContext).load(uploadCurrent.getImageUrl()).fit().centerCrop().into(holder.electronicImage);
-        holder.electronicName.setText(uploadCurrent.getXtitle());
-        holder.electronicPrice.setText(uploadCurrent.getXprice());
-        holder.electronicLocation.setText(uploadCurrent.getXlocation());
-        holder.electronicDescription.setText(uploadCurrent.getXdescription());
+        holder.electronicName.setText(uploadCurrent.gettitle());
+        holder.electronicPrice.setText(uploadCurrent.getprice());
+        holder.electronicLocation.setText(uploadCurrent.getlocation());
+        holder.electronicDescription.setText(uploadCurrent.getdescription());
 
     }
 

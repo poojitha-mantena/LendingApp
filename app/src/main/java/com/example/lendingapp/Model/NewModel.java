@@ -2,17 +2,17 @@ package com.example.lendingapp.Model;
 
 public class NewModel {
 
-    private String ximageUrl;
-    private String xtitle;
-    private String xdescription;
-    private String xprice;
-    private String xlocation;
+    private String image;
+    private String title;
+    private String description;
+    private String price;
+    private String location;
 
     public NewModel(){
         // empty constructor needed.
     }
 
-    public NewModel(String imageUrl, String title, String description, String price, String location){
+    public NewModel(String image, String title, String description, String price, String location){
 
         if (title.trim().equals("")){
             title = "Enter title";
@@ -27,50 +27,50 @@ public class NewModel {
             location = "Enter Locatiion";
         }
 
-        this.ximageUrl = imageUrl;
-        this.xtitle = title;
-        this.xdescription = description;
-        this.xprice = price;
-        this.xlocation = location;
+        this.image = image;
+        this.title = title;
+        this.description = description;
+        this.price = price;
+        this.location = location;
     }
 
-    public void setXimageUrl(String ximageUrl) {
-        this.ximageUrl = ximageUrl;
+    public void setimage(String image) {
+        this.image = image;
     }
 
-    public void setXtitle(String xtitle) {
-        this.xtitle = xtitle;
+    public void settitle(String title) {
+        this.title = title;
     }
 
-    public void setXdescription(String xdescription) {
-        this.xdescription = xdescription;
+    public void setdescription(String description) {
+        this.description = description;
     }
 
-    public void setXprice(String xprice) {
-        this.xprice = xprice;
+    public void setprice(String price) {
+        this.price = price;
     }
 
-    public void setXlocation(String xlocation) {
-        this.xlocation = xlocation;
+    public void setlocation(String location) {
+        this.location = location;
     }
 
-    public String getXimageUrl() {
-        return ximageUrl;
+    public String getimage() {
+        return image;
     }
 
-    public String getXtitle() {
-        return xtitle;
+    public String gettitle() {
+        return title;
     }
 
-    public String getXdescription() {
-        return xdescription;
+    public String getdescription() {
+        return description;
     }
 
-    public String getXprice() {
-        return xprice;
+    public String getprice() {
+        return price;
     }
 
-    public String getXlocation() {
-        return xlocation;
+    public String getlocation() {
+        return location;
     }
 }
