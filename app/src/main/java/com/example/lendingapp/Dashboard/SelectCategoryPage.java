@@ -28,18 +28,15 @@ public class SelectCategoryPage extends AppCompatActivity {
     private DrawerLayout mDrawerlayout;
     private ActionBarDrawerToggle mToggle;
 
+    FirebaseAuth mAuth;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_select_category_page);
         //getSupportActionBar().hide();
 
-        /*mDrawerlayout = (DrawerLayout) findViewById(R.id.drawer);
-        mToggle = new ActionBarDrawerToggle(SelectCategoryPage.this,mDrawerlayout,R.string.open,R.string.close);
-        mDrawerlayout.addDrawerListener(mToggle);
-        mToggle.syncState();
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);*/
-
+        mAuth = FirebaseAuth.getInstance();
 
         VechilesCard = (CardView) findViewById(R.id.vechileCard);
         BooksCard = (CardView) findViewById(R.id.booksCard);
@@ -99,12 +96,19 @@ public class SelectCategoryPage extends AppCompatActivity {
             Toast.makeText(this, "You clicked chats", Toast.LENGTH_SHORT).show();
         }
         else if(item.getItemId()==R.id.logout){
-            FirebaseAuth.getInstance().signOut();
-            startActivity(new Intent(SelectCategoryPage.this, LoginActivity.class));
+            mAuth.signOut();
+            signOut();
         }
         else{
             return super.onOptionsItemSelected(item);
         }
         return true;
+    }
+
+    private void signOut() {
+        Intent intent = new Intent(SelectCategoryPage.this,LoginActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
+        finish();
     }
 }
