@@ -109,7 +109,7 @@ public class AdBookDetails extends AppCompatActivity {
                 @Override
                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                     Toast.makeText(AdBookDetails.this, "Upload Successful", Toast.LENGTH_LONG).show();
-                    NewModel upload = new NewModel(taskSnapshot.getMetadata().getReference().getDownloadUrl().toString(),adtitle.getText().toString().trim(),addescription.getText().toString().trim(),
+                    NewModel upload = new NewModel(taskSnapshot.getUploadSessionUri().toString(),adtitle.getText().toString().trim(),addescription.getText().toString().trim(),
                             adprice.getText().toString().trim(),adlocation.getText().toString().trim());
                     String uploadId = mDatabaseRef.push().getKey();
                     mDatabaseRef.child(uploadId).setValue(upload);
