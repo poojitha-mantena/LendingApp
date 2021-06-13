@@ -10,6 +10,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+
+import com.example.lendingapp.Chat.ChatPage;
+import com.example.lendingapp.Chat.CustomAdapter;
+import com.example.lendingapp.Chat.StartActivity;
 import com.example.lendingapp.Model.NewModel;
 import com.example.lendingapp.PostAdd.AdVehicleDetails;
 import com.example.lendingapp.R;
@@ -45,8 +49,23 @@ public class Vechiles extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(Vechiles.this, AdVehicleDetails.class);
                 startActivity(intent);
+
+        FloatingActionButton chat;
+        chat = findViewById(R.id.chat_button);
+        chat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Vechiles.this, StartActivity.class);
+                startActivity(intent);
             }
         });
+
+            }
+
+        });
+
+
+
         // ignore this portion for now its not complete
 
         swipeRefreshLayout = (SwipeRefreshLayout)findViewById(R.id.swipeRefreshLayout);

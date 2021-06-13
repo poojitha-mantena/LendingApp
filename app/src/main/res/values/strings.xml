@@ -45,6 +45,8 @@
     <string name="location">Location</string>
     <string name="location2">Location</string>
     <string name="next">Next</string>
+    <string name="start">Start</string>
+    <string name="display_name">Display Name</string>
 
 
 </resources>
