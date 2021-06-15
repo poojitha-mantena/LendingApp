@@ -11,6 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.LendingApp">
+        <activity android:name=".Chat.ChatPage"></activity>
         <activity android:name=".ProductDetails.FullDetailsPage" />
         <activity android:name=".PostAdd.AdElectronicsDetails" />
         <activity android:name=".Categories.Hardware" />
@@ -24,7 +25,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Chat.ChatPage" />
+        <activity android:name=".Chat.StartActivity"/>
+        <activity android:name=".Chat.EnterChat"/>
         <activity android:name=".Categories.Clothes" />
         <activity android:name=".Categories.Electronics" />
         <activity android:name=".Categories.Books" />

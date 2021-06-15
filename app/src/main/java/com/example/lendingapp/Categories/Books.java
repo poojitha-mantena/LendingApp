@@ -86,8 +86,8 @@ public class Books extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         list=new ArrayList<>();
-        booksAdapter=new BooksAdapter(this,list);
-        recyclerView.setAdapter(booksAdapter);
+        //booksAdapter=new BooksAdapter(this,list);
+        //recyclerView.setAdapter(booksAdapter);
 
         database.addValueEventListener(new ValueEventListener() {
             @Override
@@ -95,9 +95,11 @@ public class Books extends AppCompatActivity {
                 for(DataSnapshot dataSnapshot: snapshot.getChildren()){
                     NewModel books = dataSnapshot.getValue(NewModel.class);
                     list.add(books);
+
+                    booksAdapter = new BooksAdapter(Books.this, list);
+                    recyclerView.setAdapter(booksAdapter);
                 }
-                booksAdapter = new BooksAdapter(Books.this, list);
-                recyclerView.setAdapter(booksAdapter);
+
                 //booksAdapter.notifyDataSetChanged();
             }
 

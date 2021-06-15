@@ -6,6 +6,7 @@ import android.os.Bundle;
 
 import com.example.lendingapp.R;
 
+
 public class ChatPage extends AppCompatActivity {
 
     @Override
