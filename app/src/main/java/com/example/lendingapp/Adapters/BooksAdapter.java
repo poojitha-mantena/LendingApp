@@ -11,9 +11,12 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.lendingapp.Model.NewModel;
 import com.example.lendingapp.ProductDetails.FullDetailsPage;
 import com.example.lendingapp.R;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -22,6 +25,7 @@ public class BooksAdapter extends RecyclerView.Adapter<BooksAdapter.BooksViewHol
 
     private Context mContext;
     private List<NewModel> mUploads;
+    StorageReference storageReference= FirebaseStorage.getInstance().getReference("Image");
 
     public BooksAdapter(Context context, List<NewModel> uploads){
         mContext = context;
@@ -39,11 +43,11 @@ public class BooksAdapter extends RecyclerView.Adapter<BooksAdapter.BooksViewHol
     public void onBindViewHolder(@NonNull BooksViewHolder holder, int position) {
          NewModel uploadCurrent = mUploads.get(position);
         //Glide.with(mContext).load(uploadCurrent.getXimageUrl()).into(holder.imageView);
-        //Glide.with(mContext).load(mUploads.get(position).getImageUrl()).into(holder.imageView);
+        //Glide.with(mContext).load(mUploads.get(position).getimage()).into(holder.imageView);
         //Picasso.get().load(uploadCurrent.getXimageUrl()).into(holder.imageView);
         //Picasso.get().load(String.valueOf(NewModel.class)).into(holder.imageView);
       //https://firebasestorage.googleapis.com/v0/b/lendingapp-fecd8.appspot.com/o/Image%2F1623287634999.jpg?alt=media&token=69d10de0-91e6-4bf9-a8a8-c50451b5fd5d
-        Picasso.get().load(uploadCurrent.getimage()).fit().centerCrop().into(holder.imageView);
+        //Picasso.get().load(storage.get).fit().centerCrop().into(holder.imageView);
         holder.bookName.setText(uploadCurrent.gettitle());
         holder.bookPrice.setText(uploadCurrent.getprice());
         holder.bookLocation.setText(uploadCurrent.getlocation());

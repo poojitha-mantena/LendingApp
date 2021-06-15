@@ -1,6 +1,5 @@
 package com.example.lendingapp.Dashboard;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
@@ -17,6 +16,7 @@ import com.example.lendingapp.Categories.Books;
 import com.example.lendingapp.Categories.Electronics;
 import com.example.lendingapp.Categories.Hardware;
 import com.example.lendingapp.Categories.Vechiles;
+import com.example.lendingapp.CreateProfile;
 import com.example.lendingapp.Credentials.LoginActivity;
 import com.example.lendingapp.R;
 import com.google.firebase.auth.FirebaseAuth;
@@ -97,6 +97,10 @@ public class SelectCategoryPage extends AppCompatActivity {
         }
         else if(item.getItemId()==R.id.chat){
             Toast.makeText(this, "You clicked chats", Toast.LENGTH_SHORT).show();
+        }
+        else if(item.getItemId()==R.id.cprofile){
+            Intent i=new Intent(SelectCategoryPage.this, CreateProfile.class);
+            startActivity(i);
         }
         else if(item.getItemId()==R.id.logout){
             FirebaseAuth.getInstance().signOut();

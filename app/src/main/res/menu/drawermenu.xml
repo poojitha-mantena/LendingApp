@@ -4,6 +4,7 @@
 
     <item android:id="@+id/myads" android:title="My Ads" android:icon="@drawable/ic_baseline_cloud_upload_24"/>
     <item android:id="@+id/chat" android:title="Chats" android:icon="@drawable/ic_baseline_chat_24"/>
+    <item android:id="@+id/cprofile" android:title="Change Profile"/>
     <item android:id="@+id/help" android:title="Help and Support" android:icon="@drawable/ic_baseline_help_24"/>
     <item android:id="@+id/settings" android:title="Settings" android:icon="@drawable/ic_baseline_settings_24"/>
     <item android:id="@+id/logout" android:title="LogOut" android:icon="@drawable/ic_baseline_login_24"/>

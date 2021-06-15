@@ -13,6 +13,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.lendingapp.CreateProfile;
 import com.example.lendingapp.Dashboard.SelectCategoryPage;
 import com.example.lendingapp.ForgotPassword;
 import com.example.lendingapp.R;
@@ -149,15 +150,15 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         }
     }
     private void userLogin() {
-        String email=editTextEmail.getText().toString().trim();
-        String password=editTextPassword.getText().toString().trim();
+        String email = editTextEmail.getText().toString().trim();
+        String password = editTextPassword.getText().toString().trim();
 
-        if(email.isEmpty()){
+        if (email.isEmpty()) {
             editTextEmail.setError("Email is required!");
             editTextEmail.requestFocus();
             return;
         }
-        if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
+        if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
             editTextEmail.setError("Please enter a valid Email!");
             editTextEmail.requestFocus();
             return;
@@ -167,27 +168,27 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             editTextPassword.requestFocus();
             return;
         }
-        if(password.length() < 6) {
+        if (password.length() < 6) {
             editTextPassword.setError("Minimum password length is 6 characters!");
             editTextPassword.requestFocus();
             return;
         }
         progressBar.setVisibility(View.VISIBLE);
 
-        mAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+        mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
-                if(task.isSuccessful()){
-                    FirebaseUser user= FirebaseAuth.getInstance().getCurrentUser();
+                if (task.isSuccessful()) {
+                    FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
-                    if(user.isEmailVerified()) {
+                    if (user.isEmailVerified()) {
                         startActivity(new Intent(LoginActivity.this, SelectCategoryPage.class));
-                    }  else {
-                            user.sendEmailVerification();
-                            Toast.makeText(LoginActivity.this,"Check Your Email To Verify Your Account",Toast.LENGTH_LONG).show();
-                        }
-                }else{
-                    Toast.makeText(LoginActivity.this,"Failed to Login, Please try again!",Toast.LENGTH_LONG).show();
+                    } else {
+                        user.sendEmailVerification();
+                        Toast.makeText(LoginActivity.this, "Check Your Email To Verify Your Account", Toast.LENGTH_LONG).show();
+                    }
+                } else {
+                    Toast.makeText(LoginActivity.this, "Failed to Login, Please try again!", Toast.LENGTH_LONG).show();
                 }
 
             }

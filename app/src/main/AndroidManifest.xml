@@ -16,6 +16,7 @@
         <activity android:name=".Categories.Hardware" />
         <activity android:name=".Categories.Vechiles" />
         <activity android:name=".ForgotPassword" />
+        <activity android:name=".CreateProfile"/>
         <activity android:name=".SplashScreen.SplashPage">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
