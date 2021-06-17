@@ -30,7 +30,7 @@ public class CreateProfile extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
 
-        profile = findViewById(R.id.TVprofile);
+        //profile = findViewById(R.id.TVprofile);
         profileImage=findViewById(R.id.iv_profile);
         etName=findViewById(R.id.et_profileName);
         etPhone=findViewById(R.id.et_profileNum);
