@@ -141,15 +141,7 @@
             android:textSize="18sp"
             android:layout_gravity="center"
             android:elevation="0dp"/>
-        <Button
-            android:id="@+id/FacebookButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:backgroundTint="#6ad3d6"
-            android:text="@string/facebook"
-            android:textSize="18sp"
-            android:layout_gravity="center"
-            android:elevation="0dp"/>
+
 
         <ProgressBar
             android:id="@+id/progressbar"
