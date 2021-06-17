@@ -9,6 +9,7 @@
     tools:context=".CreateProfile">
 
     <TextView
+        android:id="@+id/TVprofile"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="30sp"
@@ -30,7 +31,7 @@
             android:id="@+id/iv_profile"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/ic_person"
+
             android:scaleType="fitCenter">
 
         </ImageView>
@@ -54,7 +55,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:drawablePadding="5dp"
-            android:drawableStart="@drawable/ic_person"
+
             android:paddingStart="10dp"
             android:paddingEnd="10dp"
             android:hint="Name" />
@@ -70,7 +71,7 @@
             android:id="@+id/et_profileNum"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:drawableStart="@drawable/ic_phone"
+
             android:drawablePadding="5dp"
             android:hint="Phone Number"
             android:inputType="number"
@@ -88,7 +89,7 @@
             android:id="@+id/et_profileMail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:drawableStart="@drawable/ic_email"
+
             android:drawablePadding="5dp"
             android:hint="Email"
             android:paddingStart="10dp"

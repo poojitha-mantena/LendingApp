@@ -37,6 +37,7 @@ public class FullDetailsPage extends AppCompatActivity {
         itemPrice.setText(price);
         itemDescription.setText(description);
         itemLocation.setText(location);
+        productImage.setImageURI(Uri.parse(image));
         //productImage.setImageDrawable(Drawable.createFromPath(image));
         //productImage.setImageURI(Uri.parse(image));
     }

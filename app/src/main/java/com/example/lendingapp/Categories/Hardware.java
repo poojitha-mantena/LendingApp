@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.example.lendingapp.Adapters.HardwareAdapter;
+import com.example.lendingapp.Chat.StartActivity;
 import com.example.lendingapp.Model.NewModel;
 import com.example.lendingapp.PostAdd.AdHardwareDetails;
 import com.example.lendingapp.R;
@@ -45,6 +46,16 @@ public class Hardware extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(Hardware.this, AdHardwareDetails.class);
                 startActivity(intent);
+            }
+        });
+
+        FloatingActionButton chat;
+        chat = findViewById(R.id.chat_button);
+        chat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i=new Intent(Hardware.this, StartActivity.class);
+                startActivity(i);
             }
         });
         // ignore this portion for now its not complete

@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 
@@ -17,6 +18,7 @@ import com.google.firebase.database.ValueEventListener;
 public class CreateProfile extends Activity {
     EditText etName,etPhone,etMail;
     ImageView profileImage;
+    TextView profile;
     private String email;
     private FirebaseDatabase database;
     private DatabaseReference userRef;
@@ -28,7 +30,7 @@ public class CreateProfile extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
 
-
+        profile = findViewById(R.id.TVprofile);
         profileImage=findViewById(R.id.iv_profile);
         etName=findViewById(R.id.et_profileName);
         etPhone=findViewById(R.id.et_profileNum);

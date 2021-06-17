@@ -79,7 +79,7 @@ public class StartActivity extends AppCompatActivity implements View.OnClickList
         dict2 = new HashMap<>();
         dict2.put("name", "Bornak");
         dict2.put("email", "bornakpaul@gmail.com");
-        dict2.put("uid", "cNDViQ0QmBXHq2DRoZp87mqB4nc2");
+        dict2.put("uid", "C1x4OZ75hCaWXmuhkVnZB9Pixzj1");
 
         arrMap.add(1, dict2);
 
@@ -97,13 +97,13 @@ public class StartActivity extends AppCompatActivity implements View.OnClickList
 
         arrMap.add(3, dict4);
 
-        dict5 = new HashMap<>();
-        dict5.put("name", "Rimo");
-        dict5.put("email", "rimolmg@gmail.com");
-        dict5.put("uid", "JeaHfKbPUmXadkrTIW09tCl4Bjt1");
-
-
-        arrMap.add(4, dict5);
+//        dict5 = new HashMap<>();
+//        dict5.put("name", "Rimo");
+//        dict5.put("email", "rimolmg@gmail.com");
+//        dict5.put("uid", "JeaHfKbPUmXadkrTIW09tCl4Bjt1");
+//
+//
+//        arrMap.add(4, dict5);
 
     }
 
@@ -123,7 +123,7 @@ public class StartActivity extends AppCompatActivity implements View.OnClickList
                 arrayAdapter.add("Bornak");
                 arrayAdapter.add("Poojitha");
                 arrayAdapter.add("Hitesh");
-                arrayAdapter.add("Rimo");
+                //arrayAdapter.add("Rimo");
 
                 builderSingle.setNegativeButton("cancel", new DialogInterface.OnClickListener() {
                     @Override

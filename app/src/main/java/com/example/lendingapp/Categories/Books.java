@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.example.lendingapp.Adapters.BooksAdapter;
+import com.example.lendingapp.Chat.StartActivity;
 import com.example.lendingapp.Model.NewModel;
 import com.example.lendingapp.PostAdd.AdBookDetails;
 import com.example.lendingapp.R;
@@ -46,6 +47,16 @@ public class Books extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(Books.this, AdBookDetails.class);
                 startActivity(intent);
+            }
+        });
+
+        FloatingActionButton chat;
+        chat = findViewById(R.id.chat_button);
+        chat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i=new Intent(Books.this, StartActivity.class);
+                startActivity(i);
             }
         });
 

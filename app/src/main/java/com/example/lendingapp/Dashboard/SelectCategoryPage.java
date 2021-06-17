@@ -90,17 +90,17 @@ public class SelectCategoryPage extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if(item.getItemId()==R.id.myads){
-            Toast.makeText(this, "You clicked my adds", Toast.LENGTH_SHORT).show();
-        }
-        else if(item.getItemId()==R.id.chat){
+//        if(item.getItemId()==R.id.myads){
+//            Toast.makeText(this, "You clicked my adds", Toast.LENGTH_SHORT).show();
+//        }
+        if(item.getItemId()==R.id.chat){
             Intent i=new Intent(SelectCategoryPage.this, StartActivity.class);
             startActivity(i);
         }
-        else if(item.getItemId()==R.id.cprofile){
-            Intent i=new Intent(SelectCategoryPage.this, CreateProfile.class);
-            startActivity(i);
-        }
+//        else if(item.getItemId()==R.id.cprofile){
+//            Intent i=new Intent(SelectCategoryPage.this, CreateProfile.class);
+//            startActivity(i);
+//        }
         else if(item.getItemId()==R.id.logout){
             mAuth.signOut();
             signOut();

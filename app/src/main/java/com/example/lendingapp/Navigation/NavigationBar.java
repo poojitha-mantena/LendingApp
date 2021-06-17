@@ -29,7 +29,7 @@ public class NavigationBar extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_navigation_bar);
 
-        Myads = findViewById(R.id.myads);
+        //Myads = findViewById(R.id.myads);
 //        Myads.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
 //            @Override
 //            public boolean onMenuItemClick(MenuItem menuItem) {
