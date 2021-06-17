@@ -70,35 +70,35 @@ public class StartActivity extends AppCompatActivity implements View.OnClickList
         arrMap =  new ArrayList<HashMap<String, String>>();
 
         dict1 = new HashMap<>();
-        dict1.put("name", "suhail");
+        dict1.put("name", "Suhail");
         dict1.put("email", "suhailmohd25@gmail.com");
         dict1.put("uid", "f0CiREe6kWP8s3PXkiGhgeBfm433");
 
         arrMap.add(0, dict1);
 
         dict2 = new HashMap<>();
-        dict2.put("name", "bornak");
+        dict2.put("name", "Bornak");
         dict2.put("email", "bornakpaul@gmail.com");
         dict2.put("uid", "cNDViQ0QmBXHq2DRoZp87mqB4nc2");
 
         arrMap.add(1, dict2);
 
         dict3 = new HashMap<>();
-        dict3.put("name", "poojitha");
+        dict3.put("name", "Poojitha");
         dict3.put("email", "poojithamantena1@gmail.com");
         dict3.put("uid", "5Bm44MEExtXxDSZFJjSXZNj25KX2");
 
         arrMap.add(2, dict3);
 
         dict4 = new HashMap<>();
-        dict4.put("name", "hitesh");
+        dict4.put("name", "Hitesh");
         dict4.put("email", "hitucool10@gmail.com");
-        dict4.put("uid", "xSoKpxgizEQpijPPm4XRqDPqZfI2");
+        dict4.put("uid", "kIyW7hkzynRxNdHUpiYOJvm4xGI2");
 
         arrMap.add(3, dict4);
 
         dict5 = new HashMap<>();
-        dict5.put("name", "rimo");
+        dict5.put("name", "Rimo");
         dict5.put("email", "rimolmg@gmail.com");
         dict5.put("uid", "JeaHfKbPUmXadkrTIW09tCl4Bjt1");
 
@@ -119,11 +119,11 @@ public class StartActivity extends AppCompatActivity implements View.OnClickList
                 builderSingle.setTitle("Select!!..");
 
                 final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(StartActivity.this, android.R.layout.select_dialog_singlechoice);
-                arrayAdapter.add("suhail");
-                arrayAdapter.add("bornak");
-                arrayAdapter.add("poojitha");
-                arrayAdapter.add("hitesh");
-                arrayAdapter.add("rimo");
+                arrayAdapter.add("Suhail");
+                arrayAdapter.add("Bornak");
+                arrayAdapter.add("Poojitha");
+                arrayAdapter.add("Hitesh");
+                arrayAdapter.add("Rimo");
 
                 builderSingle.setNegativeButton("cancel", new DialogInterface.OnClickListener() {
                     @Override

@@ -16,6 +16,7 @@ import com.example.lendingapp.Categories.Books;
 import com.example.lendingapp.Categories.Electronics;
 import com.example.lendingapp.Categories.Hardware;
 import com.example.lendingapp.Categories.Vechiles;
+import com.example.lendingapp.Chat.StartActivity;
 import com.example.lendingapp.CreateProfile;
 import com.example.lendingapp.Credentials.LoginActivity;
 import com.example.lendingapp.R;
@@ -93,7 +94,8 @@ public class SelectCategoryPage extends AppCompatActivity {
             Toast.makeText(this, "You clicked my adds", Toast.LENGTH_SHORT).show();
         }
         else if(item.getItemId()==R.id.chat){
-            Toast.makeText(this, "You clicked chats", Toast.LENGTH_SHORT).show();
+            Intent i=new Intent(SelectCategoryPage.this, StartActivity.class);
+            startActivity(i);
         }
         else if(item.getItemId()==R.id.cprofile){
             Intent i=new Intent(SelectCategoryPage.this, CreateProfile.class);
