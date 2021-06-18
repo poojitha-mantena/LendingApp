@@ -8,19 +8,6 @@
     android:id="@+id/drawer"
     tools:context=".Dashboard.SelectCategoryPage">
 
-    <com.google.android.material.navigation.NavigationView
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:background="@color/white"
-        app:itemTextColor="@color/black"
-        app:itemIconTint="#6ad3d6"
-        app:menu="@menu/drawermenu"
-        app:headerLayout="@layout/header"
-        android:layout_gravity = "start"
-        >
-
-    </com.google.android.material.navigation.NavigationView>
-
     <TextView
         android:id="@+id/title_view"
         android:layout_width="wrap_content"
