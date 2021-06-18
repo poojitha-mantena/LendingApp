@@ -42,7 +42,7 @@ public class BooksAdapter extends RecyclerView.Adapter<BooksAdapter.BooksViewHol
         //Glide.with(mContext).load(mUploads.get(position).getImageUrl()).into(holder.imageView);
 
         //https://firebasestorage.googleapis.com/v0/b/lendingapp-fecd8.appspot.com/o/Image%2F1623328503213.jpg?alt=media&token=f1242b6c-2a95-43aa-a9ba-9d6413790a11
-        Picasso.get().load("https://firebasestorage.googleapis.com/v0/b/lendingapp-fecd8.appspot.com/o/Image%2F1623328503213.jpg?alt=media&token=f1242b6c-2a95-43aa-a9ba-9d6413790a11").fit().centerCrop().into(holder.imageView);
+        Picasso.get().load("https://firebasestorage.googleapis.com/v0/b/lendingapp-fecd8.appspot.com/o/Image%2F1623978806121.jpg?alt=media&token=2027070e-3eaa-4837-a1ea-b8579e8b5258").fit().centerCrop().into(holder.imageView);
         //Picasso.get().load(uploadCurrent.getimage()).fit().centerCrop().into(holder.imageView);
         holder.bookName.setText(uploadCurrent.gettitle());
         holder.bookPrice.setText(uploadCurrent.getprice());
@@ -65,20 +65,20 @@ public class BooksAdapter extends RecyclerView.Adapter<BooksAdapter.BooksViewHol
         public BooksViewHolder(@NonNull View itemView) {
             super(itemView);
             // next page content section
-//            itemView.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View view) {
-//                   // starting a new intent here.
-//                    Intent desc =  new Intent(view.getContext(), FullDetailsPage.class);
-//                    desc.putExtra("title", String.valueOf(bookName.getText()));
-//                    desc.putExtra("description", String.valueOf(bookDescription.getText()));
-//                    desc.putExtra("price", String.valueOf(bookPrice.getText()));
-//                    desc.putExtra("location", String.valueOf(bookLocation.getText()));
-//                    //desc.putExtra("Image", String.valueOf(mUploads.get(imageView.getImageAlpha())));
-//                    desc.putExtra("image", new String("https://firebasestorage.googleapis.com/v0/b/lendingapp-fecd8.appspot.com/o/Image%2F1623328503213.jpg?alt=media&token=f1242b6c-2a95-43aa-a9ba-9d6413790a11"));
-//                    view.getContext().startActivity(desc);
-//                }
-//            });
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                   // starting a new intent here.
+                    Intent desc =  new Intent(view.getContext(), FullDetailsPage.class);
+                    desc.putExtra("title", String.valueOf(bookName.getText()));
+                    desc.putExtra("description", String.valueOf(bookDescription.getText()));
+                    desc.putExtra("price", String.valueOf(bookPrice.getText()));
+                    desc.putExtra("location", String.valueOf(bookLocation.getText()));
+                    //desc.putExtra("Image", String.valueOf(mUploads.get(imageView.getImageAlpha())));
+                    //desc.putExtra("image", new String("https://firebasestorage.googleapis.com/v0/b/lendingapp-fecd8.appspot.com/o/Image%2F1623328503213.jpg?alt=media&token=f1242b6c-2a95-43aa-a9ba-9d6413790a11"));
+                    view.getContext().startActivity(desc);
+                }
+            });
             //
             bookName=itemView.findViewById(R.id.itemName);
             bookPrice=itemView.findViewById(R.id.itemPrice);
